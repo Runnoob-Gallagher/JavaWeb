@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f15701ed-fdb6-4343-90a4-f0c8ef7a8944" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_37_bin__2_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC/src/Demo01/Demo03Accquire.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC/src/Demo01/Demo04CyCleAccquire.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC/src/Demo01/Demo05Emp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC/src/Demo01/Demo05ObjcetAccquire.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC/src/Demo01/Demo06Emp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC/src/Demo01/Demo06Mysql.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC/src/Demo01/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JDBC/src/Jdbc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JDBC/JDBC.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JDBC/JDBC.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JDBC/src/Demo01/IntroduceObject.java" beforeDir="false" />
-    </list>
+    <list default="true" id="f15701ed-fdb6-4343-90a4-f0c8ef7a8944" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JDBC/src/Demo01/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-152">
-              <caret line="1" column="64" selection-start-line="1" selection-start-column="64" selection-end-line="1" selection-end-column="64" />
+            <state relative-caret-position="228">
+              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#close#0;class#Utils#0" />
@@ -142,33 +127,7 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="JavaWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JDBC" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JDBC" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JDBC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaWeb" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JDBC" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Demo01" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -285,18 +244,18 @@
       <option name="presentableId" value="Default" />
       <updated>1597548949132</updated>
       <workItem from="1597548955458" duration="13173000" />
-      <workItem from="1597567716640" duration="13269000" />
+      <workItem from="1597567716640" duration="14133000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26442000" />
+    <option name="totallyTimeSpent" value="27306000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2533512" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2533512" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -305,7 +264,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -465,8 +424,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JDBC/src/Demo01/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-152">
-          <caret line="1" column="64" selection-start-line="1" selection-start-column="64" selection-end-line="1" selection-end-column="64" />
+        <state relative-caret-position="228">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#close#0;class#Utils#0" />
