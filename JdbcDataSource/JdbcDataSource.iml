@@ -10,5 +10,18 @@
     <orderEntry type="library" name="c3p0-0.9.5.2" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.37-bin" level="project" />
     <orderEntry type="library" name="druid-1.0.9" level="project" />
+    <orderEntry type="library" name="libs" level="project" />
+    <orderEntry type="module-library">
+      <library name="JUnit5.3">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/junit-jupiter-api-5.7.0-RC1.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/apiguardian-api-1.1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/opentest4j-1.2.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/junit-platform-commons-1.7.0-RC1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

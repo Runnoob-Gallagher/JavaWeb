@@ -35,8 +35,6 @@ public class Demo02Druid {
             Connection connection = dataSource.getConnection();
             System.out.println(i + " " + connection);
         }
-
-
     }
 
 
