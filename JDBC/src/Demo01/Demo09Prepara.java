@@ -40,13 +40,12 @@ public class Demo09Prepara {
         PreparedStatement preparedStatement = null;
         ResultSet result = null;
         try {
-
             conn = Utils.getConnection();
             String sql = "select * from login where username = ? and password = ?";
             preparedStatement = conn.prepareStatement(sql);
             preparedStatement.setString(1,username);//这里开始写的 “username“ 不能加双引号，本来就是String类型的了
             preparedStatement.setString(2,password);
-            result = preparedStatement.executeQuery();
+            result = preparedStatement.executeQuery();//这里就不用传SQL了
            /* if (username == null || password == null){
                 return false;
             }*/

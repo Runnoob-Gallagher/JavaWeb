@@ -12,7 +12,7 @@ public class Demo08SqlInjection {
         //接收键盘输入
         Scanner sc = new Scanner(System.in);
         System.out.println("请输入用户名：");
-        String username = sc.nextLine();
+        String username = sc.nextLine();   //next结束符为空格，nextLine结束符为enter
         System.out.println("请输入密码：");   //a' or 'a' = 'a
         //就相当于   select * from login where username = 'dasdasa' and password = 'a' or 'a' = 'a' ;
         String password = sc.nextLine();

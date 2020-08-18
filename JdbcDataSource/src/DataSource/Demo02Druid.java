@@ -27,7 +27,7 @@ public class Demo02Druid {
         ClassLoader classLoader = Demo02Druid.class.getClassLoader();
         URL resource = classLoader.getResource("druid.properties");
         String path = resource.getPath();
-        pro.load(new FileReader(path));
+        pro.load(new FileReader(path));  // 从输入流中读取属性列表（键和元素对）。 直接读取，不需要之前赋值
         //获取数据库连接池对象
         DataSource dataSource = DruidDataSourceFactory.createDataSource(pro);
         System.out.println(dataSource);

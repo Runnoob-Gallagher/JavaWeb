@@ -35,6 +35,12 @@ public class Demo07Utils {
             }
         }
     public static Connection getconnection() throws SQLException {
+            /*
+            public static Connection getConnection(String url)
+                                throws SQLException   数据库连接的超级接口：Connection
+            看之前写的：Connection conn = null;
+                      conn = DriverManager.getConnection("jdbc:mysql://39.98.137.124:3306/Tesla", "root", "Gallagher1.");
+             */
         return DriverManager.getConnection(url,user,password);
     }
     public static void close(ResultSet result, Statement stat, Connection conn){

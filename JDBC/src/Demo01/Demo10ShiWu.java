@@ -5,7 +5,7 @@ JDBC 控制事务
     2.提交事务 commit();
     3.回滚事务 rollback();
     获取到连接之后就可以开启事务了   conn.SetAutoCommit(false)
-    执行sql语句之后提交事务       conn.connit();
+    执行sql语句之后提交事务       conn.commit();
     在catch异常中进行事物的回滚    conn.rollback();
  */
 public class Demo10ShiWu {

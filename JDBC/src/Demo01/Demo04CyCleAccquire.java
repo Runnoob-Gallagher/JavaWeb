@@ -24,7 +24,7 @@ public class Demo04CyCleAccquire {
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }finally {
-            if(result != null && stat != null && conn != null )
+            if(result != null && stat != null && conn != null )//这样是不对的
             try{
                 result.close();
                 stat.close();

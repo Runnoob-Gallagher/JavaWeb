@@ -9,7 +9,7 @@ Spring JDBC :Spring对jdbc的简单封装
     1.导入jar包
     2.创建JdbcTemplate对象。依赖与数据源DataSource
           JdbcTemplate template = new JdbcTemplate(DataSource ds);
-    3.调用JdbcTemplate中的方法惊醒CRUD
+    3.调用JdbcTemplate中的方法进行CRUD
         *update():执行DML语句。
         *queryDorMap()：查询结果将结果集封装为Map集合
             注意：这个方法将列名作为key，将值作为value，然后将记录封装为一个map集合中。存入的集合长度只能为1.即一行数据

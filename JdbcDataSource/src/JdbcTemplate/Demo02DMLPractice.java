@@ -11,7 +11,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
-
+/*
+    1.导入jar包
+    2.创建JdbcTemplate对象。依赖与数据源DataSource
+          JdbcTemplate template = new JdbcTemplate(DataSource ds);
+    3.调用JdbcTemplate中的方法进行CRUD
+ */
 public class Demo02DMLPractice {
     //因为这个创建JdbcTemplate对象太过麻烦且重复率很高，就直接定义为私有静态成员变量
     private static JdbcTemplate jdbctemplate = new JdbcTemplate(DruidUtils.getdatasource());
