@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../HTML标签/HTML标签.iml" filepath="$PROJECT_DIR$/../HTML标签/HTML标签.iml" />
       <module fileurl="file://$PROJECT_DIR$/JDBC.iml" filepath="$PROJECT_DIR$/JDBC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../JdbcDataSource/JdbcDataSource.iml" filepath="$PROJECT_DIR$/../JdbcDataSource/JdbcDataSource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../JdbcDataSource/JdbcDataSource1.iml" filepath="$PROJECT_DIR$/../JdbcDataSource/JdbcDataSource1.iml" />
     </modules>
   </component>
 </project>
