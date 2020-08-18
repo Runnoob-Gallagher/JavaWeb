@@ -3,20 +3,20 @@ package JdbcTemplate;
 import java.sql.Date;
 
 public class EmpObject {
-    private int id;
+    private Integer id;
     private String ename;
-    private int job_id;
-    private int mgr;
+    private Integer job_id;
+    private Integer mgr;
     private Date joindate;
-    private double salary;
-    private double bonus;
-    private int dept_id;
+    private Double salary;
+    private Double bonus;
+    private Integer dept_id;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -28,19 +28,19 @@ public class EmpObject {
         this.ename = ename;
     }
 
-    public int getJob_id() {
+    public Integer getJob_id() {
         return job_id;
     }
 
-    public void setJob_id(int job_id) {
+    public void setJob_id(Integer job_id) {
         this.job_id = job_id;
     }
 
-    public int getMgr() {
+    public Integer getMgr() {
         return mgr;
     }
 
-    public void setMgr(int mgr) {
+    public void setMgr(Integer mgr) {
         this.mgr = mgr;
     }
 
@@ -52,27 +52,27 @@ public class EmpObject {
         this.joindate = joindate;
     }
 
-    public double getSalary() {
+    public Double getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(Double salary) {
         this.salary = salary;
     }
 
-    public double getBonus() {
+    public Double getBonus() {
         return bonus;
     }
 
-    public void setBonus(double bonus) {
+    public void setBonus(Double bonus) {
         this.bonus = bonus;
     }
 
-    public int getDept_id() {
+    public Integer getDept_id() {
         return dept_id;
     }
 
-    public void setDept_id(int dept_id) {
+    public void setDept_id(Integer dept_id) {
         this.dept_id = dept_id;
     }
 
