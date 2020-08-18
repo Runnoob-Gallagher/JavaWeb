@@ -15,7 +15,7 @@ public class Utils {
     static {
         ClassLoader classLoader = Utils.class.getClassLoader();
        /* URL resource = classLoader.getResource("Jdbc.properties");
-        String path = resource.getPath();*/ //这里用两种不同的读取方法最终都是要用properties去加载
+        String path = resource.getPath();*/ //这里用两种不同的读取方法最终都是要用properties去加载；
         InputStream resourceAsStream = classLoader.getResourceAsStream("Jdbc.properties");
         Properties pro  = new Properties();
         try {
