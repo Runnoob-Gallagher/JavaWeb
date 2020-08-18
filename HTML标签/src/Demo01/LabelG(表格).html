@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格标签</title>
+</head>
+<body>
+    <!--表格标签：
+        * table : 定义表格
+            *width:宽度
+            *border:边框
+            *cellpadding：定义内容与单元格的距离
+            *cellspacing：定义单元格之间的距离。如果为0.则合并为一条直线
+            *bgcolor：背景色
+        *tr:定义行 就换行作用？
+            * bgcolor :定义行的属性颜色
+            * align :定义行的属性存放位置
+        *td:定义单元格  就隔开了
+            *colspan : 合并列
+            *rowspan : 合并行
+        *th:定义表头单元格  使得表头变黑变粗
+
+        <caption> : 表格标题
+        <thead>:表示表格的头部分
+        <tbody>:表示表格的体部分
+        <tfoot>:表示表格的尾部分   定义了所属位置之后，不论地方判断位置，根据属性判断位置。tfoot一直在下面
+        table里面的属性很重要
+        border：表示边框
+
+
+        你要注意斜线  / 的位置在哪  先斜线后字母
+        -->
+    <table border="1" width="50%" cellpadding="0" cellspacing="0" bgcolor="#7fffd4">
+        <caption>英雄属性表</caption>
+        <tr bgcolor="red" align="center">
+            <th>英雄名</th>
+            <th>线路位置</th>
+            <th>爆发伤害</th>
+        </tr>
+
+        <tr>
+            <td>劫</td>
+            <td>中单</td>
+            <td>高爆发</td>
+        </tr>
+
+        <tr>
+            <td>蒙多</td>
+            <td>上单</td>
+            <td>高续航</td>
+        </tr>
+
+        <tr>
+            <td>奶妈</td>
+            <td>辅助</td>
+            <td>高回复</td>
+        </tr>
+    </table>
+    <hr/>
+    <table border="1" width="50%" cellpadding="0" cellspacing="0" bgcolor="#7fffd4">
+        <caption>英雄属性表</caption>
+        <tr bgcolor="red" align="center">
+            <th>英雄名</th>
+            <th>线路位置</th>
+            <th>爆发伤害</th>
+        </tr>
+
+        <tr>
+            <td rowspan="2" align="center">劫</td>
+            <td>中单</td>
+            <td>高爆发</td>
+        </tr>
+
+        <tr>
+
+            <td>上单</td>
+            <td>高续航</td>
+        </tr>
+
+        <tr>
+            <td>奶妈</td>
+            <td colspan="2" align="center">辅助</td>
+
+        </tr>
+    </table>
+</body>
+</html>
