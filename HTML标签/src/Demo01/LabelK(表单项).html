@@ -5,13 +5,80 @@
     <title>表单项</title>
 </head>
 <body>
-<!--表单项标签：
+<!--
+                                        具体看手册
+
+    表单项标签：
+    *action:表示提交表单的URL
+        name表示数据被提交时，指定的名字：在URL框显示的信息 ---》 &password=asdas
+        注意：只有设置了 name 属性的表单元素才能在提交表单时传递它们的值。
+
     *input：可以通过type属性值，改变元素展示的样式
         *type属性：
             *text：文本输入框  默认选项
-            *password：密码输入框-->
-<form action="#">
+                    placeholder：指定输入框的提示信息
+            *password：密码输入框
+            *radio：单选框
+                1.注意：要想让多个单选框实现单选的效果，则多个单选框的name属性值必须一样；比如：都为gender
+                性别：<input type="radio" name="gender"> 男
+                     <input type="radio" name="gender"> 女
+                2.一般会给一个单选框提供一个value值，指定被选中后提交的值
+                3.checked属性：指定默认值   直接在某个之后面加上就好
+            *checkbox:复选框
+                1.一般会给一个单选框提供一个value值，指定被选中后提交的值
+                2.checked属性：指定默认值
+          *label:指定输入项的文字描述信息
+                label的for属性一般会和input中的id属性值对应，表示指向它。具体看实例
+     *用value表示提交的值  value 属性规定 <input> 元素的值。      -->
+<form action="#" method="get">  <!--get 可以在地址输入栏，看到相关的信息-->
+    <hr/>
+   <!-- placeholder：指定输入框的提示信息   label的for属性一般会和input中的id属性值对应，表示指向它。
+    只有设置了 name 属性的表单元素才能在提交表单时传递它们的值。  value 属性规定 <input> 元素的值。-->
+   <label for="username">用户名：</label> <input type="text" name="username" placeholder="请输入用户名" id="username"><br/>
+    密码：<input type="password" name="password" placeholder="请输入密码"><br/>
+    <!--checked属性：指定默认值
+    1.注意：要想让多个单选框实现单选的效果，则多个单选框的name属性值必须一样；比如：都为gender
+                性别：<input type="radio" name="gender"> 男
+                     <input type="radio" name="gender"> 女
+                2.一般会给一个单选框提供一个value值，指定被选中后提交的值-->
+    性别：<input type="radio" name="gender" value="male" checked> 男
+          <input type="radio" name="gender" value="female"> 女 <br/>
+          兴趣爱好 <input type="checkbox" name="shopping" value="shopping">购物
+                <input type="checkbox" name="swimming" value="swimming" checked>游泳
+                <input type="checkbox" name="running" value="running">跑步
 
+
+        <!--按钮：
+            submit：提交按钮
+            button：普通按钮    这三个都能提交表单
+            image：图片提交按钮
+                *src属性指定图片的-->
+        <input type="image"  src="../images/icon_3.jpg">
+        <input type="button" value="普通按钮">
+        <input type="submit" value="登录">
+    <br/> <hr/>
+    <!--file 文件隐藏域-->
+        <input type="file">
+    <hr/>
+    <hr/>
+    <br/>
+    <!--取色器
+        type = "color"-->
+    取色器<input type="color" name="color">
+    <hr/>
+    <!--日期：date   datetime-local-->
+    生日<input type="date" name="birthday" ><br/>
+    今天的日子<input type="datetime-local" name="today">
+    Email<input type="email" name="email">
+    Number<input type="number" name="数字">
 </form>
+<form action="demo_form.php">
+    Name: <input type="text" name="fullname"><br>
+    Email: <input type="text" name="email"><br>
+    <input type="submit" value="提交">
+</form>
+
+
+
 </body>
 </html>

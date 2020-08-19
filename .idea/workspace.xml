@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f15701ed-fdb6-4343-90a4-f0c8ef7a8944" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/JDBC/src/Demo01/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/JDBC/src/Demo01/Utils.java" afterDir="false" />
-    </list>
+    <list default="true" id="f15701ed-fdb6-4343-90a4-f0c8ef7a8944" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,8 +126,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -137,7 +135,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/JdbcDataSource" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/HTML标签" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -250,17 +248,17 @@
       <workItem from="1597567716640" duration="14133000" />
       <workItem from="1597675828254" duration="72000" />
       <workItem from="1597768506337" duration="9000" />
+      <workItem from="1597837334187" duration="27000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27387000" />
+    <option name="totallyTimeSpent" value="27414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25970548" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2630522" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
