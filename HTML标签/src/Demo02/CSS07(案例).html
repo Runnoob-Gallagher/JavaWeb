@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS注册页面</title>
+    <style>
+        body{
+            background: url("../CSSimages/13645.jpg");
+        }
+        .Outer{
+            width: 800px;
+            height: 438px;
+            border: 5px solid gray;
+            background-color: white;
+          /*  让这个最外层div居中   margin:auto*/
+            margin: auto;
+            margin-top: 100px;
+        }
+        /*让所有边框都靠得比较近 margin设置为0*/
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .left{
+            /*border: 1px solid black;*/
+            float: left;
+            margin: 10px;
+        }
+        .left_nameA{     /*也可以  left_name > p:first_child  表示p标签父元素下得第一元素标签*/
+            color: #FFD034;
+            font-size: 18px;
+        }
+        .left > p:last-child {    /*也可以  left_name > p:last_child  表示p标签父元素下得第一元素标签*/
+            color: #A6A6A6;
+            font-size: 18px;
+        }
+
+        .center{
+           /* border: 1px solid black;*/
+            float: left;
+        }
+        .right{
+         /*   border: 1px solid black;*/
+            float: right;
+            margin: 15px;
+        }
+        .right_nameB{
+            color: #FCA8B0;
+        }
+    </style>
+</head>
+<body>
+    <div class="Outer" >
+    <div class="left">
+        <p class="left_nameA">新用户注册</p>
+        <p class="left_nameB">USER REGISTER</p>
+    </div>
+    <div class="center" align="center">
+        <table>
+            <tr>
+                <td><label for="username">用户名</label></td>
+                <td>
+                    <input name="username" type="text" placeholder="请输入账号" id="username">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="password">密码</label></td>
+                <td>
+                    <input name="password" type="password" placeholder="请输入密码" id="password">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="mail">Email</label></td>
+                <td>
+                    <input name="mail" type="email" placeholder="请输入密码" id="mail">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="XM">姓名</label></td>
+                <td>
+                    <input name="text" type="XM" placeholder="请输入姓名" id="XM">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="number">手机号</label></td>
+                <td>
+                    <input name="number" type="number" placeholder="请输入您的手机号" id="number">
+                </td>
+            </tr>
+            <tr>
+                <td><label>性别</label></td>
+                <td>
+                    <input name="sex" type="radio" value="male">男
+                    <input name="sex" type="radio" value="female">女
+                </td>
+            </tr>
+            <tr>
+                <td><label for="date">出生日期</label></td>
+                <td>
+                    <input name="date" type="date" id="date">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="word">验证码</label></td>
+                <td>
+                    <input name="word" type="text" id="word" placeholder="请输入验证码">
+                    <img src="../CSSimages/verify_code.jpg">
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2">
+                    <input name="commit" type="submit" value="注册">
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="right">
+        <p class="right_nameA">已有账号？<a href="#" class="right_nameB">立即登录</a></p>
+    </div>
+    </div>
+</body>
+</html>

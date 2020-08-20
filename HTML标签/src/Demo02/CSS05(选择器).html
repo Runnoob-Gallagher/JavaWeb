@@ -1,17 +1,78 @@
 <!DOCTYPE html>
-扩展选择器：
+<!--扩展选择器：
     1.选择所有元素：
         语法： *{}
     2.并集选择器：
         语法： 选择器1，选择器2{}
     3.子选择器： 表示筛选选择器1下面的选择器2
         语法： 选择器1 选择器2{}
+    4.父选择器：筛选选择器2的父选择器
+        语法： 选择器1 > 选择器2{}
+    5.属性选择器：选择元素名称，属性名=属性值的元素
+        语法： 元素名称[属性名="属性值"]{}
+    6.伪类选择器：选择一些元素具有的状态   比如你准备点击某个菜单时他的不同状态下的不同颜色显示
+        语法： 元素:状态{}
+            如： a
+                状态：
+                    link：初始化状态
+                    visited：被访问过的状态
+                    active：正在访问状态
+                    hover：鼠标悬浮状态
+        -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>扩展选择器</title>
+        <style>
+            <!--现在我就选择div标签下的p标签-->
+            div p{
+                color: red;
+                font-size: 30px;
+            }
+           /*现在来实验父选择器：首先记住 div标签作用于一个区域，不仅仅是div中的字体*/
+            div > p{
+                border: 1px solid;   /*border表示边框  solid表示实现*/
+            }
+            /*现在来实现属性选择器*/
+            input[type="text"]{
+                border: 1px solid;
+            }
+            input[type="password"]{
+                border: 1px solid;
+            }
+            /*重要的伪类选择器：*/
+            a:link{
+                color: darkgreen;
+            }
+            a:hover{
+                color: black;
+            }
+            a:active{
+                color: yellow;
+            }
+            a:visited{
+                color: red;
+            }
+        </style>
 </head>
 <body>
+    <hr/>
+    <!--并集选择器示例：-->
+    <div>
+        <p>
+            这个是div标签下的p标签下的内容
+        </p>
+    </div>
 
+    <hr/>
+    <p>
+        这个就仅仅是p标签下的内容
+    </p>
+    <hr/>
+
+    <input type="text">
+    <input type="password">
+    <hr/>
+    <a href="#">确认选择</a>
 </body>
 </html>

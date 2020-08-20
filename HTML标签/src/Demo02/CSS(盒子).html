@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <!--根据盒子参照物的不同分为内边距和外边距
+        margin：外边距   当冲突时都是以第一个为准
+        padding：内边距
+            默认情况下，内边距会影响整个盒子的大小
+            强制设定盒子大小：box-sizing:border-box;这样设置的盒子就是最终大小
+        float：浮动   感觉没啥意义
+        left
+        right-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS盒子</title>
+    <style>
+        div{
+            color: red;
+            border: 1px solid;
+        }
+        .claA{
+            border: 2px solid ;
+            width: 300px;
+            height: 300px;
+            /*padding: 20px;*/
+            box-sizing: border-box;
+        }
+        .claB{
+            border: 2px solid;
+            width: 150px;
+            height: 150px;
+           /* margin: 50px;*/
+            margin-left: 140px;    /*像这样冲突的就只会显示前面的部分*/
+            margin-right: 20px;
+        }
+        .claC{
+            float: left;
+        }
+        .claD{
+            float: left;
+        }
+        .claE{
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="claA" >
+    <div class="claB" >
+        <!--这里用到了元素选择器-->
+    </div>
+</div>
+<div class="claC" >AAAA</div>
+<div class="claD">BBBB</div>
+<div class="claE">CCCC</div>
+</body>
+</html>
