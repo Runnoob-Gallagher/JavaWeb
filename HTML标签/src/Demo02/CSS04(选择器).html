@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+ <!--基础选择器：
+    1.id选择器  选择具体的id属性值得元素，在一个HTML页面中id属性值最好唯一
+        语法：   #id属性值{}    如下面的 #div1{}
+    2.元素选择器 选择具有相同标签名称的元素
+        语法：   标签名称{}      如下面的 div{}
+    3.类选择器  选择具有相同的class属性值得元素
+        语法：   .class属性值{}
+        -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础选择器</title>
+    <style>
+
+        div{
+            color: red;
+            font-size: 30px;
+        }
+        .claA{
+            color: darkgoldenrod;
+            font-size: 50px;
+        }
+        #div1{
+            color: chartreuse;
+            font-size: 40px;    /*这里的div1样式没有发生改变，虽然他在div下包裹。说明div1的优先级更高*/
+        }
+        #number{
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div>税友软件集团（红色）</div>
+<div id="div1">税友软件集团（绿色）id选择器（绿色）嵌套在元素选择器中（红色）</div>
+<div class="claA">元素选择器（红色）和类选择器作对比（土色）</div>
+<div id="number" class="claA">id选择器(黄色)、类选择器(土色)、元素选择器(红色)</div>
+通过上面的颜色显示可以知道：id选择器>类选择器>元素选择器
+</body>
+</html>
