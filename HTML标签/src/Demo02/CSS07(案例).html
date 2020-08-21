@@ -5,12 +5,12 @@
     <title>CSS注册页面</title>
     <style>
         body{
-            background: url("../CSSimages/13645.jpg");
+            background: url("../CSSimages/20181030.jpg");
         }
         .Outer{
             width: 800px;
             height: 438px;
-            border: 5px solid gray;
+            border: 5px solid #A6A6A6;
             background-color: white;
           /*  让这个最外层div居中   margin:auto*/
             margin: auto;
@@ -25,7 +25,7 @@
         .left{
             /*border: 1px solid black;*/
             float: left;
-            margin: 10px;
+            margin: 20px;
         }
         .left_nameA{     /*也可以  left_name > p:first_child  表示p标签父元素下得第一元素标签*/
             color: #FFD034;
@@ -37,17 +37,97 @@
         }
 
         .center{
-           /* border: 1px solid black;*/
+            /*border: 1px solid black;*/
             float: left;
+            box-sizing: border-box;
         }
         .right{
-         /*   border: 1px solid black;*/
+           /* border: 1px solid black;*/
             float: right;
-            margin: 15px;
+            margin: 5px;
         }
         .right_nameB{
             color: #FCA8B0;
         }
+        .td_left{
+            width: 100px;
+            text-align: right;
+            height: 40px;
+        }
+        .td_right{
+            padding-left: 30px;
+        }
+        #username,#word,#date,#number,#mail,#password,#XM {
+            width: 150px;
+            height: 25px;
+            border: 1px solid #A6A6A6;
+            /*设置边框圆角：border-radius*/
+            border-radius: 5px;
+            padding: 10px;
+        }
+        #td_pic{
+           /* border: black 1px solid;*/
+            /*可以不设置长宽高让他居中，可以直接设置垂直居中*/
+            height: 25px;
+            width: 100px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+        #sub{
+            width: 100px;
+            height: 40px;
+            border-radius: 5px;
+            background: #FFD034;
+            border: 1px #FFD034 solid ;
+        }
+       /* #password {   不用写这么多，用并集选择器
+            width: 150px;
+            height: 25px;
+            border: 1px solid #A6A6A6;
+            !*设置边框圆角：border-radius*!
+            border-radius: 5px;
+            padding: 5px;
+        }
+        #mail {
+            width: 150px;
+            height: 25px;
+            border: 1px solid #A6A6A6;
+            !*设置边框圆角：border-radius*!
+            border-radius: 5px;
+            padding: 5px;
+        }
+        #XM {
+            width: 150px;
+            height: 25px;
+            border: 1px solid #A6A6A6;
+            !*设置边框圆角：border-radius*!
+            border-radius: 5px;
+            padding: 5px;
+        }
+        #number {
+            width: 150px;
+            height: 25px;
+            border: 1px solid #A6A6A6;
+            !*设置边框圆角：border-radius*!
+            border-radius: 5px;
+            padding: 5px;
+        }
+        #date {
+            width: 150px;
+            height: 25px;
+            border: 1px solid #A6A6A6;
+            !*设置边框圆角：border-radius*!
+            border-radius: 5px;
+            padding: 5px;
+        }
+        #word {
+            width: 150px;
+            height: 25px;
+            border: 1px solid #A6A6A6;
+            !*设置边框圆角：border-radius*!
+            border-radius: 5px;
+            padding: 5px;
+        }*/
     </style>
 </head>
 <body>
@@ -59,58 +139,60 @@
     <div class="center" align="center">
         <table>
             <tr>
-                <td><label for="username">用户名</label></td>
-                <td>
+                <td class="td_left"><label for="username">用户名</label></td>
+                <td class="td_right">
                     <input name="username" type="text" placeholder="请输入账号" id="username">
                 </td>
             </tr>
             <tr>
-                <td><label for="password">密码</label></td>
-                <td>
+                <td class="td_left"><label for="password">密码</label></td>
+                <td class="td_right">
                     <input name="password" type="password" placeholder="请输入密码" id="password">
                 </td>
             </tr>
             <tr>
-                <td><label for="mail">Email</label></td>
-                <td>
+                <td class="td_left"><label for="mail">Email</label></td>
+                <td class="td_right">
                     <input name="mail" type="email" placeholder="请输入密码" id="mail">
                 </td>
             </tr>
             <tr>
-                <td><label for="XM">姓名</label></td>
-                <td>
+                <td class="td_left"><label for="XM">姓名</label></td>
+                <td class="td_right">
                     <input name="text" type="XM" placeholder="请输入姓名" id="XM">
                 </td>
             </tr>
             <tr>
-                <td><label for="number">手机号</label></td>
-                <td>
+                <td class="td_left"><label for="number">手机号</label></td>
+                <td class="td_right">
                     <input name="number" type="number" placeholder="请输入您的手机号" id="number">
                 </td>
             </tr>
             <tr>
-                <td><label>性别</label></td>
-                <td>
+                <td class="td_left"><label>性别</label></td>
+                <td class="td_right">
                     <input name="sex" type="radio" value="male">男
                     <input name="sex" type="radio" value="female">女
                 </td>
             </tr>
             <tr>
-                <td><label for="date">出生日期</label></td>
-                <td>
+                <td class="td_left"><label for="date">出生日期</label></td>
+                <td class="td_right">
                     <input name="date" type="date" id="date">
                 </td>
             </tr>
             <tr>
-                <td><label for="word">验证码</label></td>
-                <td>
+                <td class="td_left"><label for="word">验证码</label></td>
+                <td class="td_right">
                     <input name="word" type="text" id="word" placeholder="请输入验证码">
-                    <img src="../CSSimages/verify_code.jpg">
+                </td>
+                <td >
+                    <img id="td_pic" src="../CSSimages/verify_code.jpg">
                 </td>
             </tr>
             <tr>
-                <td rowspan="2">
-                    <input name="commit" type="submit" value="注册">
+                <td align="center" colspan="3" >
+                    <input id="sub" name="commit" type="submit" value="注册">
                 </td>
             </tr>
         </table>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--+(正号)：表示一个正数
+—(负号)：表示一个负数
+    当正号后面不是number类型时，它会有一个转换
+        如果string类型是数字&ndash;&gt; "123" 那么会加1后自己转为数字124  如果string类型不是数字-&ndash;&gt; "abc" 那么加1后变为NaN
+        如果是boolean那么true代表1，false代表0，然后进行相加减；-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+    var numA= +"123" + 1
+    document.write(numA + "---" + typeof (numA))
+    var numB= +"abc" + 1
+    document.write(numB + "---" + typeof (numB))
+    </script>
+</body>
+</html>
