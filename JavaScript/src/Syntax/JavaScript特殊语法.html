@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--script语句以分号结尾，也可以不使用
+
+script中定义变量用var，比如  var value = 3；，如果不使用var，那么就表示全部变量
+
+
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>特殊语法</title>
+    <script>
+    var valueA = 3;
+    document.write(valueA); /*输出3*/
+    function fun() {
+        valueB = 4;
+        var valueC = 5;
+    }
+    fun();
+    document.write(valueB); /*输出4*/
+    document.write(valueC); /*无输出*/
+        document.write("<hr/>");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

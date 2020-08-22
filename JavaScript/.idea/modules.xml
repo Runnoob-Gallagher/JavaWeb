@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../HTML标签/HTML标签.iml" filepath="$PROJECT_DIR$/../HTML标签/HTML标签.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaScript.iml" filepath="$PROJECT_DIR$/JavaScript.iml" />
     </modules>
   </component>

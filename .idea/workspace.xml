@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f15701ed-fdb6-4343-90a4-f0c8ef7a8944" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HTML标签/src/CSSimages/20181030.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HTML标签/src/Demo02/CSS07(案例).html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML标签/src/Demo02/CSS07(案例).html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBC/Demo01/Demo07Jdbc.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBC/Demo01/Demo07Utils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBC/Demo01/Demo08SqlInjection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBC/Demo01/Demo08TestScanner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBC/Demo01/Demo09Prepara.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBC/Demo01/Demo10ShiWu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBC/Demo01/Utils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBC/Demo02/Demo01JdbcPool.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBC/HelloWorld.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JDBC/META-INF/JDBC.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScript/src/Syntax/Script基础.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScript/src/Syntax/Script基础.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +55,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/JavaScript" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -171,11 +159,18 @@
       <workItem from="1597837334187" duration="27000" />
       <workItem from="1597996080950" duration="15000" />
       <workItem from="1597996105824" duration="9000" />
+      <workItem from="1598074286921" duration="17000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1598074303818">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1598074303818" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

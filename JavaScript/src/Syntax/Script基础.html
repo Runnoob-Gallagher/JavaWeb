@@ -3,18 +3,49 @@
 —(负号)：表示一个负数
     当正号后面不是number类型时，它会有一个转换
         如果string类型是数字&ndash;&gt; "123" 那么会加1后自己转为数字124  如果string类型不是数字-&ndash;&gt; "abc" 那么加1后变为NaN
-        如果是boolean那么true代表1，false代表0，然后进行相加减；-->
+        如果是boolean那么true代表1，false代表0，然后进行相加减；
+   比较运算符(< > = !=)
+        类型相同，直接比较  返回一个boolean值  如果是字符串,按字典顺序 比如 "abc" > "acd" 第一个a肯定相同，第二个b<c 返回false
+        类型不同，先进行类型转换，再比较.  如果是全等  ===   那么就不进行类型转换，直接false
+   逻辑运算符(&&(有短路效果) ||(有短路效果) !)
+        其他类型转boolean：
+            number：0或NaN为假，非0为真
+            string：除了"" 其他都为true
+        -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>运算符</title>
 </head>
 <body>
     <script>
     var numA= +"123" + 1
-    document.write(numA + "---" + typeof (numA))
+    document.write(numA + "---" + typeof (numA) + "<br/>");
     var numB= +"abc" + 1
-    document.write(numB + "---" + typeof (numB))
+    document.write(numB + "---" + typeof (numB) + "<br/>");
+    document.write("<hr/>")
+
+        document.write((3 > 4 )+ "<br/>" );
+        document.write(("abc" > "acd") + "<br/>");
+        document.write(("123" == 123) + "<br/>");
+        document.write("123" === 123);
+        document.write("<hr/>");
+
+        var numC = 3;
+        var numD = 0;
+        var numE = NaN;
+        document.write(!numC + "<br/>") ;  /*false*/
+        document.write(!!numC + "<br/>");   /* true*/
+        document.write(!!numD + "<br/>");    /*false*/
+        document.write(!!numE + "<br/>");  /* false*/
+        document.write("<hr/>");
+
+        var strA = "";
+        var strB = "abc";
+        document.write(!strA + "<br/>");
+        document.write(!!strA + "<br/>");
+        document.write(!strB + "<br/>");
+        document.write(!!strB + "<br/>");
     </script>
 </body>
 </html>
