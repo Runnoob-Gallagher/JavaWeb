@@ -1,17 +1,47 @@
 <!DOCTYPE html>
-Global全局对象：这个Global中封装的方法不需要对象就可以直接使用。类似于static修饰的类变量。  直接用方法名调用  方法名();
+<!--Global全局对象：这个Global中封装的方法不需要对象就可以直接使用。类似于static修饰的类变量。  直接用方法名调用  方法名();
     方法：
         encodeURI():url编码
         decodeURI():url解码
 
-        encodeURIComponent():url编码
+        encodeURIComponent():url编码   编码的字符较上面更多
         decodeURIComponent():url解码
+
+        parseInt()	解析一个字符串并返回一个整数。 逐一判断每一个字符是否是数字，直到不是数字为止，将前边的数字部分转为number
+        String()	把对象的值转换为字符串。
+        isNaN(x)	如果 x 是特殊的非数字值 NaN（或者能被转换为这样的值），返回的值就是 true。如果 x 是其他值,则返回 false。
+        isNaN() 函数通常用于检测 parseFloat() 和 parseInt() 的结果，以判断它们表示的是否是合法的数字。当然也可以用 isNaN() 函数来检测算数错误，比如用 0 作除数的情况。
+
+        eval()	计算 JavaScript 字符串，并把它作为脚本代码来执行。
+            -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Global对象</title>
     <script>
+    var nameA = "Gallagher";   //好像只能是中文才行哦,与格式是UTF-8相关
+    var urlA = encodeURI(nameA);
+    document.write(urlA + "<br/>");
 
+    var nameB = "平凡之路";
+    var urlB = encodeURIComponent(nameB);
+    document.write(urlB + "<br/>"); //prit:   %E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF
+
+    var urlC = "%E5%B9%B3%E5%87%A1%E4%B9%8B%E8%B7%AF";
+    var nameC = decodeURI(urlC);
+    document.write(nameC + "<br/>");
+
+    var nameD = decodeURIComponent(urlC);
+    document.write(nameD + "<br/>");
+
+    var strA = "a1789a2b3c4d5e6f";
+    var number = parseInt(strA);
+    document.write(number + "<br/>"); //输出1789，因为碰到了非数字a;如果前面直接加一个a直接NaN
+
+    var num= 123;
+    var str = NaN;
+    document.write(isNaN(num) + "<br/>");
+    document.write(isNaN(str));
     </script>
 </head>
 <body>

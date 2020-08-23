@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!--某些组件被执行了某些操作后，出发某些代码的执行
+        事件属性：
+            ①单击事件：onclick
+    如何绑定事件：
+        1.直接在HTML标签上，指定时间的属性，属性值就是JS代码
+        2.通过在外面定义函数进行事件绑定-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function fun() {
+           alert("再点，把你家点了");
+        }
+    </script>
+</head>
+<body>
+    <img id = "lightA" src="../Image/off.gif" onclick="alert('我被点了')"> <!--这个alert里面为什么是单引号-->
+    <img id = "lightB" src="../Image/off.gif" onclick=fun()>
+</body>
+</html>

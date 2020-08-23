@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<img id="myImg" src="/i/shanghai_lupu_bridge.jpg" alt="上海卢浦大桥" width="350" height="234">
+
+<p>单击按钮以显示图像的 src 属性。</p>
+
+<button onclick="myFunction()">试一试</button>
+
+<p id="demo"></p>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myImg").src;
+        document.getElementById("demo").innerHTML = x;
+    }
+</script>
+</body>
+</html>
