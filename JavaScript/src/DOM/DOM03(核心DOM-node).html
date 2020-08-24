@@ -20,8 +20,8 @@
             width: 100px;
             height: 100px;
         }
-        #new{
-            border: aqua 1px solid;
+        #newA{
+            border: green 1px solid;
             width: 50px;
             height: 50px;
         }
@@ -35,20 +35,26 @@
         </div>
     </div>
     <input  type="button" value="删除子节点" id="delete"> <!--这里是使用button来删除的，下面使用链接去操作-->
-    <a href="javascript:void(0);" id = "add" >添加子节点</a>   <!--href=""：表示跳转，但是为空就表示只在当前页面-->
+    <a href="javascript:void(0);" id = "add">添加子节点</a>   <!--href=""：表示跳转，但是为空就表示只在当前页面-->
 
     <script>
+    var outA = document.getElementById("outer");  //这里是获取外层div元素的对象，用以后面调用
     var deleteA = document.getElementById("delete");  //注意这里只是获取了单击事件的button，只是为了绑定单击事件
     deleteA.onclick = function () {
         var inA = document.getElementById("inner");  //这里是获取内层div元素的对象，用以后面调用
-        var outA = document.getElementById("outer");  //这里是获取外层div元素的对象，用以后面调用
+
         outA.removeChild(inA);
     }
+
     var addA = document.getElementById("add");
     addA.onclick = function () {
-        var outB = document.getElementById("outer");
-        var newA = document.getElementById("new");
-        outB.appendChild(newA);
+        //创建div节点
+        var adddiv = document.createElement("div");
+        /*document.write(adddiv);*/
+        adddiv.setAttribute("id","newA");
+        /*var addnew = document.getElementById("newA");*/  /*这个和 var adddiv = document.createElement("div");好像是相互反射的*/
+        outA.appendChild(adddiv);
+
     }
     </script>
 </body>
