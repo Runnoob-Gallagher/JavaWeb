@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--分析：
+    1.获取图片对象
+    2.绑定单击事件
+    3.每次点击切换图片
+        规则：
+            灯是开的，点击就关
+            灯是关的，点击就开-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电灯开关</title>
+
+</head>
+<body>
+    <!--//先定义图片-->
+    <img id = "off" src="../Image/off.gif" onclick=fun()>
+    <!--<img id = "on" src="../Image/on.gif">-->
+<script>
+    var off = document.getElementById("off");
+    /*var on = document.getElementById("on");*/
+    var flag = false; //表示灯是灭的
+    function fun() {
+        if(flag){
+            off.src = "../Image/on.gif";
+            flag = false;
+        }else {
+            off.src = "../Image/on.gif";
+            flag = true;
+        }
+
+    }
+</script>
+</body>
+</html>

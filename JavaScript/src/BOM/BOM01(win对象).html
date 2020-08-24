@@ -12,8 +12,8 @@
     <title>BOM01</title>
 </head>
 <body>
-   <!-- <input id = "clickA" type="button" value="打开新窗口" >
-    <input id = "clickB" type="button" value="关闭窗口" >-->
+    <input id = "clickA" type="button" value="打开新窗口" >
+    <input id = "clickB" type="button" value="关闭窗口" >
     <script>
         /* Window对象：
              1.创建：
@@ -37,6 +37,13 @@
                            返回值：唯一标识，用于取消定时器
                      clearTimeout()	取消由 setTimeout() 方法设置的 timeout。
              3.属性：
+                获取其他BOM对象
+                    history	对 History 对象的只读引用。
+                    location	用于窗口或框架的 Location 对象
+                    Navigator	对 Navigator 对象的只读引用
+                    Screen	对 Screen 对象的只读引用
+                获取DOM对象
+                    document
              4.特点：
                  Windows对象不需要创建可以直接使用window使用。window.方法名();
                  window引用可以省略。  方法名();*/
@@ -69,6 +76,15 @@
             alert('循环播放');
         }
         interval.clearInterval(interval);
+
+        //获取当前页面的history
+        var hisA = window.history;
+        var hisB = history;
+        alert(hisA);
+        alert(hisB);
+
+        var elementById = window.document.getElementById("clickB");
+        alert(elementById);
     </script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>与HTML集合方式</title>
+    <!--
+        注意：    JavaScript中不能直接使用<br/> <hr/>标签，要么就用"<br/>","<hr/>"包裹起来！！！！
+                Script结合方式
+        内部JS 定义script标签，标签题内容就是js代码
+        外部JS 定义script标签，通过src属性引入外部的js文件
+        script定义的位置会影响它的执行顺序
+                注释方式
+           同java        单行：   // 注释内容
+                         多行：   /*注释内容*/
+                数据类型
+         原始数据类型(基本数据类型)
+            number:数字  整数、小数、NaN(not a number)
+            string:字符串  "abc" "a"   没有字符的概念
+            boolean:true false
+            null:一个对象为空的占位符
+            undefine:未定义 如果一个变量没有给初始值，则会默认复制为undefined
+         引用数据类型：对象
+                变量
+         变量：一块存储数据的内存空间
+         Java语言是一种强类型的语言，在开辟变量存储空间的时候，定义了空间将要存储的数据类型。就只能存储那种类型
+         JavaScript语言是一种弱类型语言，不定义存储空间的数据类型，都可以存放
+         语法：
+            var 变量名 = 初始化值;
+                         -->
+</head>
+<body>
+    <script>
+    <!--定义上述变量：-->
+    var num1 = 1;
+    document.write(num1 + "---" + typeof(num1)+"<br/>");
+    var num2 = 1.1;
+    document.write(num2 + "---" + typeof(num2)+ "<br/>");
+    var num3 = NaN;
+    document.write(num3 + "---" + typeof(num3)+ "<br/>");
+    var strA = "abc";
+    document.write(strA + "---" + typeof(strA)+ "<br/>");
+    var strB = "a";
+    document.write(strB+ "---" + typeof(strB)+ "<br/>");
+    var strC = 'abc';
+    document.write(strC+ "---" + typeof(strC)+ "<br/>");
+    var strD = 'a';
+    document.write(strD+ "---" + typeof(strD)+ "<br/>");
+    var flag = true;
+    document.write(flag+ "---" + typeof(flag)+ "<br/>");
+    var valueA = null;
+    document.write(valueA + "---" + typeof(valueA)+ "<br/>");
+    var valueB = undefined;
+    document.write(valueB + "---" + typeof(valueB)+ "<br/>");
+    var valueC;
+    document.write(valueC + "---" + typeof(valueC)+ "<br/>");
+    </script>
+</body>
+</html>

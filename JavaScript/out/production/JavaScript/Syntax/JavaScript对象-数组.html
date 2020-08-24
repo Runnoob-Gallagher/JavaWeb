@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--Array:数组对象
+    1.创建方法：
+        var arry = new Array(元素列表);
+        var arry = new Array(默认长度);
+        var arry = [元素列表];
+    2.方法
+        join(参数)：将数组中的元素按照指定的分隔符拼接为字符串
+        push()：在数组尾部加入元素
+    3.属性
+        length：数组长度
+    4.特点：
+        ①：JS中，数组的元素类型是可以变化的；
+        ②：JS中，数组的长度是可以变化的；
+
+    -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+    <script>
+        /*1.创建方式：*/
+            var arryA = new Array(1,2,3);
+            var arryB = new Array(5);
+            var arryC = [1,2,3,4,5];
+            document.write(arryA + "<br/>");
+            document.write(arryB + "<br/>");
+            document.write(arryC + "<br/>");
+
+            var arryD = [1,"aaa",true];
+            document.write(arryD + "<br/>");   /*证明数组的元素类型是可变的*/
+            arryD[10] = "第10位"; /*证明数组的长度是可变的，像java的话肯定是不能赋值的*/
+            document.write(arryD[10] + "</br>");
+            alert(arryD.length); /* 给下标为10的赋值，说明一共有11位*/
+
+            document.write(arryC.join("--") + "</br>");  /*按照--对数组进行分割*/
+            arryC.push("这个是我新加的哦");
+            document.write(arryC.join("--"));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

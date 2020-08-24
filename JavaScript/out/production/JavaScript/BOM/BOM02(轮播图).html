@@ -6,7 +6,6 @@
 
 <body>
     <img src="../Image/banner_1.jpg" id = "image" width="100%">
-    <input type="button" id = "back" value="后退">
     <script>
         var num = 1;
         function fun() {
@@ -18,10 +17,6 @@
             image.src = "../Image/banner_"+num+".jpg";
         }
         setInterval(fun,2000);
-        var back = document.getElementById("back");
-        back.onclick = function () {
-            history.back();
-        }
     </script>
     </head>
 </body>

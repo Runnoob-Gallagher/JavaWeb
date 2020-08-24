@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+
+</head>
+<body>
+    <img src="../Image/banner_1.jpg" id = "cycleA" width="100%" >
+    <script>
+        var cycleA = document.getElementById("cycleA");
+        document.write(cycleA);
+        var num = 1;
+        function fun() {
+            num++;
+            if(num > 3){
+                num = 1;
+            }
+            cycleA.src = "../Image/banner_"+num+".jpg";
+        }
+        setInterval(fun,2000);
+    </script>
+</body>
+</html>

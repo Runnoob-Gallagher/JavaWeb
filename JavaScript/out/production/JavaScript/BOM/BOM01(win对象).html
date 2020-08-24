@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+   <!-- 概念：Browser Object Model 浏览器对象模型   将浏览器的各个组成部分封装成对象
+    组成：
+        Window：窗口对象
+        Navigator：浏览器对象
+        Screen：显示器屏幕对象
+        History：历史记录对象
+        Location：地址栏对象-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM01</title>
+</head>
+<body>
+    <input id = "clickA" type="button" value="打开新窗口" >
+    <input id = "clickB" type="button" value="关闭窗口" >
+    <script>
+        /* Window对象：
+             1.创建：
+             2.方法：
+                 *与弹出框有关的方法
+                     alert()	显示带有一段消息和一个确认按钮的警告框
+                     confirm()	显示带有一段消息以及确认按钮和取消按钮的对话框。
+                            如果用户点击确定，方法返回true。点击取消，方法返回false；
+                     prompt()	显示可提示用户输入的对话框。
+                             返回值是获取用户输入的值
+                 *与浏览器打开或关闭相关的方法
+                     close()	关闭浏览器窗口。
+                     open()	打开一个新的浏览器窗口,加入参数打开指定窗口；会返回该窗口的对象，这样关闭的时候也可以用这个指定；
+                 *与定时器相关的方法
+                     setInterval()	按照指定的周期（以毫秒计）来调用函数或计算表达式。
+                     clearInterval()	取消由 setInterval() 设置的 timeout。
+                     setTimeout()	在指定的毫秒数后调用函数或计算表达式。
+                           参数：
+                                1.js代码或者方法对象
+                                2.毫秒值
+                           返回值：唯一标识，用于取消定时器
+                     clearTimeout()	取消由 setTimeout() 方法设置的 timeout。
+             3.属性：
+                获取其他BOM对象
+                    history	对 History 对象的只读引用。
+                    location	用于窗口或框架的 Location 对象
+                    Navigator	对 Navigator 对象的只读引用
+                    Screen	对 Screen 对象的只读引用
+                获取DOM对象
+                    document
+             4.特点：
+                 Windows对象不需要创建可以直接使用window使用。window.方法名();
+                 window引用可以省略。  方法名();*/
+        alert("alert方法可以直接使用")
+        var con = confirm();
+        if(con){
+            alert("Are you sure?")
+        }else{
+            alert("go out!")
+        }
+        var pro = prompt("输入你的信息");
+        alert(pro);
+        var newwindow ;  //这里开始时写的window，这样是不行的，因为这个方法名就是window
+        var clickA = document.getElementById("clickA");
+        clickA.onclick = function(){
+            newwindow = open("http://www.baidu.com");
+        }
+        var clickB = document.getElementById("clickB");
+        clickB.onclick = function(){
+            newwindow.close();
+        }
+       /* setTimeout("alert('HappyEnding')",2000);*/
+        var timeout = setTimeout("funA()",2000);//注意掉方法要使用双引号
+        function funA() {
+            alert('GGSMD');
+        }
+        timeout.clearTimeout(timeout);
+        var interval = setInterval("funB()",4000);
+        function funB() {
+            alert('循环播放');
+        }
+        interval.clearInterval(interval);
+
+        //获取当前页面的history
+        var hisA = window.history;
+        var hisB = history;
+        alert(hisA);
+        alert(hisB);
+
+        var elementById = window.document.getElementById("clickB");
+        alert(elementById);
+    </script>
+</body>
+</html>

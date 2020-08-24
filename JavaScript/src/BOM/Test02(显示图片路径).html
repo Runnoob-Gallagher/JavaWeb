@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示图片路径</title>
+</head>
+<body>
+    <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1598234390&di=1631318ca6ab522269c51a0b11d01604&src=http://pic.kekenet.com/2015/0831/89351441003810.png" id = "Univer" >
+    <input id = "click" type="button" value="点击获取图片路径" onclick="fun()">
+    <script>
+        var uni = document.getElementById("Univer");
+        function fun() {
+            if(uni.src.match("0831")){
+                document.write(uni.src);
+            }
+        }
+    </script>
+</body>
+</html>
