@@ -26,7 +26,12 @@
         onkeyuo：某个键盘按键被松开
         onkeypress：某个键盘被按下并松开
     6.选择和改变
-
+        onchange    域的内容被改变
+        onselect    文本被选中
+    7.表单事件
+        onsubmit 确认按钮被点击
+            *可以阻止表单的提交，当方法的返回值为false的时候，表单就被阻止提交了
+        onreset 重置按钮被点击
     -->
 
 <html lang="en">
@@ -35,6 +40,7 @@
     <title>事件</title>
     <script>
         /*  var username = document.getElementById("username");
+        <!-- 1.焦点事件：onblur：失去焦点-->
         username.onblur = function () {
             alert("out of control!");
         }*/
@@ -64,13 +70,29 @@
                     alert("Congraducation!")
                 }
             }
+            document.getElementById("form").onsubmit = function () {
+                var flag = false;
+                return flag; //返回true表单就会被提交
+            }
         }
-
+       /* function checkform() {
+            return false;
+        }*/
     </script>
 </head>
 <body>
-    <!-- 1.焦点事件：onblur：失去焦点-->
-    <input id="username">
+
+
+    <form action="#" id="form">
+        <input name="username" id="username">  <!--<input name="username" id="form" onclick="return checkform()"> 相当于onclick=false-->
+        <select id="city">
+            <option>--请选择--</option>
+            <option>北京</option>
+            <option>上海</option>
+            <option>西安</option>
+        </select>
+        <input type="submit" value="提交">
+    </form>
 
 </body>
 </html>
