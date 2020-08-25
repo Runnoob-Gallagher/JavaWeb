@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制样式</title>
+<!--1.使用元素的style样式控制属性：
+    2.使用class属性去设置-->
+    <style>
+        .da{
+            border: 3px red solid;
+            width: 200px;
+            height: 200px;
+        }
+        .db{
+            border: 5px gray solid;
+            width: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div_id">
+        加油哦，杨洁！
+    </div>
+
+    <div id="div_sty">
+        fighting!!!
+    </div>
+    <script>
+        var sty_id = document.getElementById("div_id");
+        sty_id.onclick = function () {
+            sty_id.style.border = "1px solid red";
+            sty_id.style.fontSize = "20px";
+        }
+            var div_sty = document.getElementById("div_sty");
+            div_sty.onclick = function () {
+                div_sty.className = "db";
+            }
+
+    </script>
+</body>
+</html>

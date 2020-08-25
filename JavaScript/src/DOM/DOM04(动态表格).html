@@ -88,14 +88,14 @@
             td_ref.appendChild(a_ref); //给文本对象加上超链接
 
             //创建tr并添加td
-            var tr = document.createElement("tr");
-            tr.appendChild(td_id);
-            tr.appendChild(td_name);
-            tr.appendChild(td_gender);
-            tr.appendChild(td_ref);//还要给这一行加上这部分  不然没有删除框那部分
+            var tr_add = document.createElement("tr");
+            tr_add.appendChild(td_id);
+            tr_add.appendChild(td_name);
+            tr_add.appendChild(td_gender);
+            tr_add.appendChild(td_ref);//还要给这一行加上这部分  不然没有删除框那部分
             //获取table
             var table = document.getElementsByTagName("table")[0];
-            table.appendChild(tr);
+            table.appendChild(tr_add);
         }
         //删除
         /*  1.确定点击的是哪一个超链接
