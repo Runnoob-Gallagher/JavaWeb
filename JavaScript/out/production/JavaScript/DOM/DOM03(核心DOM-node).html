@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--节点可以是元素节点、属性节点、文本节点。即所有DOM对象都可以被视为一个节点
+方法：
+    CRUD DOM树
+        appendChild()	向节点的子节点列表的结尾添加新的子节点。
+        removeChild()	删除（并返回）当前节点的指定子节点。
+        replaceChild()	用新节点替换一个子节点。-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM-Node节点对象</title>
+    <style>
+        div{
+            border: 1px red solid;
+            width: 300px;
+            height: 300px;
+        }
+        #inner{
+            border: black 1px solid;
+            width: 100px;
+            height: 100px;
+        }
+        #newA{
+            border: green 1px solid;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+            这是最外层div；
+        <div id = "inner">
+            这是里层div；
+        </div>
+    </div>
+    <input  type="button" value="删除子节点" id="delete"> <!--这里是使用button来删除的，下面使用链接去操作-->
+    <a href="javascript:void(0);" id = "add">添加子节点</a>   <!--href=""：表示跳转，但是为空就表示只在当前页面-->
+
+    <script>
+    var outA = document.getElementById("outer");  //这里是获取外层div元素的对象，用以后面调用
+    var deleteA = document.getElementById("delete");  //注意这里只是获取了单击事件的button，只是为了绑定单击事件
+    deleteA.onclick = function () {
+        var inA = document.getElementById("inner");  //这里是获取内层div元素的对象，用以后面调用
+
+        outA.removeChild(inA);
+    }
+
+    var addA = document.getElementById("add");
+    addA.onclick = function () {
+        //创建div节点
+        var adddiv = document.createElement("div");
+        /*document.write(adddiv);*/
+        adddiv.setAttribute("id","newA");
+        /*var addnew = document.getElementById("newA");*/  /*这个和 var adddiv = document.createElement("div");好像是相互反射的*/
+        outA.appendChild(adddiv);
+
+    }
+    </script>
+</body>
+</html>

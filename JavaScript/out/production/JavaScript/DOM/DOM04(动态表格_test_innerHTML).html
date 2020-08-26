@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态表格</title>
+    <style>
+        div{
+            text-align: center;
+            margin: 50px;
+        }
+        tr,td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <input type="text" placeholder="请输入编号" id="text_id">
+    <input type="text" placeholder="请输入英雄名" id="text_name">
+    <input type="text" placeholder="请输入英雄属性" id="text_value">
+    <input type="button" value="添加" id="btu_add">
+    </div>
+    <table align="center" width="50%" border="1px" id="table">
+        <caption>英雄联盟</caption>
+        <tr>
+            <th>编号</th>
+            <th>英雄名</th>
+            <th>英雄属性</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>伊泽瑞尔</td>
+            <td>射手</td>
+            <td><a href="javascript:void(0)" onclick="deltr(this)">删除</a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>丽桑卓</td>
+            <td>法师</td>
+            <td><a href="javascript:void(0)" onclick="deltr(this)">删除</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>暗裔剑魔</td>
+            <td>战士</td>
+            <td><a href="javascript:void(0)" onclick="deltr(this)">删除</a></td>
+        </tr>
+    </table>
+    <script>
+        /*实现步骤：
+            1.给添加按钮绑定单击事件
+            2.获取文本框内容
+            3.创建td，设置td的文本为文本框的内容
+            4.创建tr
+            5.将td添加到tr中
+            6.获取table，将tr添加到table中*/
+        var btu_add = document.getElementById("btu_add");
+        //1.给添加按钮绑定单击事件
+        btu_add.onclick = function () {
+            //2.获取文本框内容
+            var id_value = document.getElementById("text_id").value;
+            var name_value = document.getElementById("text_name").value;
+            var value_value = document.getElementById("text_value").value;
+            /*//3.创建td，设置td的文本为文本框的内容
+            var ele_td_id = document.createElement("td");
+            var id = document.createTextNode(id_value);
+            ele_td_id.appendChild(id);
+
+            var ele_td_name = document.createElement("td");
+            var name = document.createTextNode(name_value);
+            ele_td_name.appendChild(name);
+
+            var ele_td_value = document.createElement("td");
+            var value = document.createTextNode(value_value);
+            ele_td_value.appendChild(value);
+
+            var ele_td_del = document.createElement("td");
+            var ele_td_href = document.createElement("a");//创建a标签属性
+            ele_td_href.setAttribute("onclick","deltr(this)");//给a标签设置属性
+            ele_td_href.setAttribute("href","javascript:void(0)");
+            var text = document.createTextNode("删除");
+            ele_td_href.appendChild(text);
+            ele_td_del.appendChild(ele_td_href);
+
+            //4.创建tr,5.将td添加到tr中
+            var ele_tr = document.createElement("tr");
+            ele_tr.appendChild(ele_td_id);
+            ele_tr.appendChild(ele_td_name);
+            ele_tr.appendChild(ele_td_value);
+            ele_tr.appendChild(ele_td_del);
+            //6.获取table，将tr添加到table中
+            var ele_table = document.getElementsByTagName("table")[0]; //getElementsByTagName()	返回带有指定标签名的对象集合。  获取表中的一行
+            ele_table.appendChild(ele_tr);*/
+            //获取table
+            var table = document.getElementsByTagName("table")[0];
+            //追加一行
+            table.innerHTML += "<tr>\n" +
+                "            <td>"+id_value+"</td>\n" +
+                "            <td>"+name_value+"</td>\n" +
+                "            <td>"+value_value+"</td>\n" +
+                "            <td><a href=\"javascript:void(0)\" onclick=\"deltr(this)\">删除</a></td>\n" +
+                "        </tr>"
+        }
+        //实现删除功能
+        function deltr(obj) {//定义一个形参接收，接收的都是某一行中列中a标签传过来的参数
+            var parentNode_table = obj.parentNode.parentNode.parentNode; //a标签的父-->列的父-->行的父--->表  这样就能实现表删除行
+            var parentNode_tr = obj.parentNode.parentNode;
+            parentNode_table.removeChild(parentNode_tr);
+        }
+    </script>
+</body>
+</html>
