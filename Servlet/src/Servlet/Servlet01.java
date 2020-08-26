@@ -1,0 +1,46 @@
+package Servlet;/*    Servlet: server applet  服务小程序
+    概念：运行在服务器端的小程序
+        *Servlet就是一个接口，定义了Java类被浏览器访问到（tomcat识别）的规则。
+        *实现：自定义一个类，实现Servlet接口，重写方法*/
+
+import javax.servlet.*;
+import java.io.IOException;
+
+/*快速入门：
+    1.创建javaEE项目
+    2.定义一个类，实现Servlet接口
+    3.实现里面的抽象方法
+    4.在web.xml配置Servlet*/
+
+/*    原理：
+    1.当服务器接收到客户端浏览器的请求后，会解析请求URL路径，获取访问得Servlet得资源路径
+    2.查找web.xml文件，是否有对应得<url-pattern>标签体内容。
+    3.如果有，则在找到对应得<Servlet-class>全类名
+    4.tomcat会将字节码文件加载进内存，并且创建其对象
+    5.调用其方法*/
+public class Servlet01 implements Servlet {
+    @Override
+    public void init(ServletConfig servletConfig) throws ServletException {
+
+    }
+
+    @Override
+    public ServletConfig getServletConfig() {
+        return null;
+    }
+    //提供服务的方法
+    @Override
+    public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
+        System.out.println("Hello,Servlet!");
+    }
+
+    @Override
+    public String getServletInfo() {
+        return null;
+    }
+
+    @Override
+    public void destroy() {
+
+    }
+}

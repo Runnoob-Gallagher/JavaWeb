@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/HTML标签.iml" filepath="$PROJECT_DIR$/HTML标签.iml" />
       <module fileurl="file://$PROJECT_DIR$/../JavaScript/JavaScript.iml" filepath="$PROJECT_DIR$/../JavaScript/JavaScript.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Servlet/Servlet.iml" filepath="$PROJECT_DIR$/../Servlet/Servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ServletA/ServletA.iml" filepath="$PROJECT_DIR$/../ServletA/ServletA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ServletB/ServletB.iml" filepath="$PROJECT_DIR$/../ServletB/ServletB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Xml/Xml.iml" filepath="$PROJECT_DIR$/../Xml/Xml.iml" />
     </modules>
   </component>
 </project>
