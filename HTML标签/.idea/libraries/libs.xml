@@ -3,6 +3,7 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../Xml/libs/jsoup-1.11.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/../Xml/libs/JsoupXpath-0.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Tomcat/apache-tomcat-8.5.31-windows-64位/apache-tomcat-8.5.31/lib/servlet-api.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
