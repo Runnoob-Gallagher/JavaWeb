@@ -1,0 +1,90 @@
+HTTP：Hyper Text TRansfer Protocol 超文本传输协议
+特点：
+    基于TCP/IP高级协议
+    基于默认端口
+    基于请求/响应模式：一次请求对应一次相应
+    无状态的：每次请求相互独立，不能交互数据
+历史版本：
+    1.0：每一次请求响应都会建立新的连接
+    2.1：复用连接
+
+请求消息数据格式：
+    1.请求行：
+        请求方法 请求url 请求协议/版本
+        GET /Login.html HTTP/1.1
+        请求方式：
+            *GET:请求参数在请求行中，url长度有限，不太安全
+            *POST：请求参数在请求体中，url没有限制，相对安全
+
+    2.请求头：
+        请求头名称:请求头值    键值对的形式
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+        Accept-Encoding: gzip, deflate, br
+        Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6
+        Cache-Control: max-age=0
+        Connection: keep-alive
+        Content-Length: 18
+        Content-Type: application/x-www-form-urlencoded
+        Cookie: Idea-c050316c=dc458bdc-ff75-4c50-a21b-08835c39f11b
+        Host: localhost:8080
+        Origin: http://localhost:8080
+        Referer: http://localhost:8080/Login.html
+        Sec-Fetch-Dest: document
+        Sec-Fetch-Mode: navigate
+        Sec-Fetch-Site: same-origin
+        Sec-Fetch-User: ?1
+        Upgrade-Insecure-Requests: 1
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36 Edg/84.0.522.63
+
+        常见的请求头：  客户端给服务器的一些信息
+            1.User-Agent:浏览器告诉服务器，访问使用的浏览器版本信息
+                *可以在服务器端获取头的信息，解决浏览器兼容问题
+            2.Referer: http://localhost:8080/Login.html
+                *防盗链
+                *统计工作
+    3.请求空行：
+        就是空行
+    4.请求体： 封装POST请求消息的参数；
+        get方式没有请求体
+        post：请求体就是填写的参数
+            username=gallagher
+
+    资源请求：
+        1.tomcat服务器根据请求url中的资源路径，创建对应的Demo01Servlet对象/   ---->"/Demo01" class Demo01Servlet
+        2.tomcat服务器，会创建request和response对象，request对象中封装请求消息数据。
+        3.tomcat将request和response两个对象传递给service方法，并且调用service方法。public void service(ServletRequest servletRequest, ServletResponse servletResponse)
+        4.我们可以通过request对象获取请求消息数据，通过response对象设置相应消息数据。
+        5.服务器在给浏览器做出相应之前，会从respond对象中拿程序设定的效应消息数据。
+
+    request对象继承体系结构：
+        ServletRequest    ---接口
+              |继承
+        HttpServletRequest   ---接口
+              |实现
+        org.apache.catalina.connector.RequestFacade   ----tomcat类实现
+
+    request功能：
+        1.获取请求消息数据
+            *请求行：
+                GET /Servlet/req HTTP/1.1
+                方法：获取请求方式 ：GET
+                    * String getMethod();
+                      获取虚拟目录： /Servlet
+                    * String getContextPath()
+                      获取Servlet路径： /req
+                    * String getServletPath()
+                       获取get方式请求参数：name=Gallagher
+                    * String getQueryString()
+                       获取请求URI：/Servlet/req
+                    * String getRequestURI() /Servlet/req
+                    * StringBuffer getRequestURL() http://localhost/Servlet/req
+                        获取协议及版本：HTTP/1.1
+                    * String getProtocol()
+                        获取客户机的IP地址
+                    * String getRemoteAddr()
+
+            *请求头
+                方法：
+                    * String getHeader(String name):通过请求头的名称获取请求头的值
+                    * Enumeration<String> getHeaderNames():获取所有的请求头名称
+
