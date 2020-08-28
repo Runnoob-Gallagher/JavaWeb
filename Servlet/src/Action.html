@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>javascript action</title>
+</head>
+<body>
+<form id="myform" action="Gallagher.php"></form>
+<button id = "on" onclick="myaction">触发</button>
+<p id="showaction"></p>
+<script>
+    document.getElementById("on").onclick = function fun() {
+        var elementById = document.getElementById("showaction");
+        elementById.innerText="dorm对象的action属性是"+document.getElementById("myform").action;
+    }
+</script>
+</body>
+</html>

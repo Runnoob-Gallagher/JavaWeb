@@ -20,8 +20,8 @@ public class Demo04Request extends HttpServlet {
 
         //防盗链
         if (referer != null) {
-            if (referer.contains("/demo04")) {
-                System.out.println("看小黄片");
+            if (referer.contains("/Request")) {
+                System.out.println("你能正常观看小黄片");
             } else {
                 System.out.println("看个锤子，好好学习");
             }

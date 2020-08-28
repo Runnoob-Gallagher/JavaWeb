@@ -1,3 +1,8 @@
+form表单中的action属性：
+当用户单击确认按钮时，表单的内容会被传送到另一个文件。
+表单的动作属性定义了目的文件的文件名。由动作属性定义的这个文件通常会对接收到的输入数据进行相关的处理。
+
+
 HTTP：Hyper Text TRansfer Protocol 超文本传输协议
 特点：
     基于TCP/IP高级协议
@@ -82,9 +87,33 @@ HTTP：Hyper Text TRansfer Protocol 超文本传输协议
                     * String getProtocol()
                         获取客户机的IP地址
                     * String getRemoteAddr()
+        2.其他功能：
+                1. 获取请求参数通用方法
+                * String getParameter(String name):根据参数名称  username=ls&password=123
+                * String[] getParameterValue(String name):根据参数名称获取参数值得数组  hobby=xx&hobby=xxx
+                * Map<String,String[]> getParameterMap():获取所有参数的map集合
+                * Enumeration<String> getParameterNames():获取所有的请求参数名称
+
+                2. 请求转发：一种在服务器内部的资源跳转的方式
+                步骤：
+                    1.通过request对象获取请求转发器对象：RequestDispatcher getRequestDispatcher(String path)
+                    2.使用RequestDispatcher对象来进行转发：forward(ServletRequest request,ServletResponse response)
+                 特点：
+                    1.浏览器地址栏不发生变化
+                    2.只能在当前服务器资源中转发
+                    3.转发只会发生一次请求
+
+                3.共享数据：因为前面又说到请求转发，在服务器内部进行资源跳转。所有根据一次请求中的资源可以做到共享
+                    域对象：一个you作用范围的对象，可以在范围内共享数据
+                    request域:代表一次请求的范围，一般用于请求转发的多个资源中共享数据
+                        方法：
+                            void setAttribute(String name.Object obj):存储数据
+                            Object getAttitude(String name);通过键获取值
+                            void removeAttribute(String name):通过键移除键值对
+
 
             *请求头
-                方法：
+                方法：      public abstract class ServletInputStream  extends InputStream
                     * String getHeader(String name):通过请求头的名称获取请求头的值
                     * Enumeration<String> getHeaderNames():获取所有的请求头名称
 
