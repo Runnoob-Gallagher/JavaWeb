@@ -47,6 +47,7 @@ public class Demo07Utils {
         if(result != null){
             try {
                 result.close();
+                result=null;
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
@@ -54,6 +55,7 @@ public class Demo07Utils {
         if(stat != null){
             try {
                 stat.close();
+                stat = null;
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
@@ -61,6 +63,7 @@ public class Demo07Utils {
         if(conn != null){
             try {
                 conn.close();
+                conn=null;
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
@@ -70,6 +73,7 @@ public class Demo07Utils {
         if(stat != null){
             try {
                 stat.close();
+                stat=null;
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
@@ -77,6 +81,7 @@ public class Demo07Utils {
         if(conn != null){
             try {
                 conn.close();
+                conn=null;
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
