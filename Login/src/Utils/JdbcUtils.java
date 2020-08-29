@@ -1,6 +1,7 @@
 package Utils;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
+import org.junit.Test;
 
 import javax.sql.DataSource;
 import java.io.InputStream;
@@ -24,6 +25,7 @@ public class JdbcUtils {
             pro.load(resourceAsStream);
             // 2.初始化连接池对象
              ds = DruidDataSourceFactory.createDataSource(pro);
+            System.out.println(ds);
         } catch (Exception e) {
             e.printStackTrace();
         }

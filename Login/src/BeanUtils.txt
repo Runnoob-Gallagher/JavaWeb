@@ -1,0 +1,20 @@
+BeanUtils工具类，简化封装数据
+    *用于封装javaBean
+        1.javaBean：标准的java类  满足的条件
+            1.类必须被public修饰
+            2.必须提供空参的构造器
+            3.成员变量必须使用private修饰
+            4.提供setter和getter方法
+        2.功能：封装数据
+    *概念：
+         成员变量：
+         属性：setter和getter方法截取后的产物
+                例如：getUsername() --> Username --> username      可以和成员变量不同名
+                    private String gender；
+                    public void setHeHe(String gender){
+                        this.gender = gender;
+                    }
+    *方法：
+        1.setProperties()
+        2.getProperties()
+        3.populate(Object obj,Map map)  将map集合的键值对信息，封装到对应的javaBean中;

@@ -21,7 +21,7 @@ public class UserDao {
     public User login(User loginuser){
         try {
             //编写sql
-            String sql = "select * from user where username=? and password=? ";
+            String sql = "select * from user where username = ? and password = ?";
             //调用query方法
             User user = tmplate.queryForObject(sql,
                     new BeanPropertyRowMapper<User>(User.class),
