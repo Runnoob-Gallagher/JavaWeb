@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+    <script>
+        window.onload = function () {
+            var element = document.getElementById("checkbox");
+            var date = new Date().getTime();
+            element.onclick = function () {
+                element.src = "/Response/checkCodeServlet?" + date;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <img id="checkbox"  src="/Response/checkCodeServlet" />
+</body>
+</html>
