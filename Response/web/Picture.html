@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片</title>
+</head>
+<body>
+
+<a href="/Response/WEB-INF/classes/image/People.jpg">图片A</a>   <!--这个不对，下面的路径才是对的-->
+<a href="/Response/image/People.jpg">图片B</a>
+<a href="/Response/image/People.avi">视频</a>
+
+<hr/>
+
+<a href="/Response/servletContextDown?filename=People.jpg">图片</a>  <!--?filename指定参数，用以确定资源文件-->
+<a href="/Response/servletContextDown?filename=People.avi">视频</a>
+
+</body>
+</html>

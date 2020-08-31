@@ -12,8 +12,8 @@ import java.io.IOException;
 public class ServletContextDemo04 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletContext context = this.getServletContext();
-        Object name = context.getAttribute("name");
-        System.out.println(name);
+        Object nameA = context.getAttribute("name");
+        System.out.println(nameA);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
