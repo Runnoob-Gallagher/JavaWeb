@@ -70,5 +70,66 @@ JSP:Java Server Pages java服务器页面
                 out：将数据输出到页面上和reponse.getwriter()类似
                     区别: reponse.getwriter()的输出不论定义的位置如何，都会先于out输出
                             因为先是找reponse的缓冲区
+C:\Users\ASUS\.IntelliJIdea2019.1\system\tomcat\Tomcat_8_5_31_Cookie&&Session_2\work\Catalina\localhost\CS\org\apache\jsp
+
+
 
 Session：服务端会话技术，再一次会话的多次请求间共享数据，将数据保存在服务端的对象中。HttpSession
+        HttpSeeeion对象： HttpSession session = request.getSession();
+            Object getAttribute(String name)
+            void setAttribute(String name,Object value)
+            void removeAttribute(String name)
+        原理：
+            第一次获取Session的时候，没有cookie，会在内存中创建一个session，并有一个唯一id
+
+            访问demo1看f12  第一次访问时，请求头没有任何的信息，响应头有cookie信息并有一个jsssionid
+            访问demo2  看请求头有jsessionid和之前一样
+
+            所以session的实现依赖cookie
+
+        注意点：
+            1.当客户端关闭，服务器不关闭，两次获取的session是不是同一个
+                不是：因为关闭一方会话就结束了，下一次就是新的cookie
+                怎么解决呢：
+                    因为session是依赖与cookie的，那么就新建一个cookie对象，设置他的存活时间
+                        HttpSession session = request.getSession();
+                        Object name = session.getAttribute("name");
+                        Cookie cookie = new Cookie("JSESSION",session.getId());//这个session.getId()就是获取JSESSION的方法
+                        cookie.setMaxAge(60);
+                        System.out.println(session.getId());
+            2.客户端不关闭，服务器关闭之后，两次获取的session是同一个吗？
+                不是同一个；
+                如何保证数据不丢失：
+                    *session的钝化：
+                        *在服务器正常关闭之前，将session对象序列化到硬盘上     在tomcat服务器中才可以，licalhost文件目录中
+                    *session的活化
+                        *在服务器正常启动过后，将session文件转化为内存中的session对象即可
+            3.session什么时候被销毁
+                1.服务器被关闭时
+                2.session默认关闭时间是30分钟
+                3.session对象调用invalidate()
+            4.特点：
+                session用于存储一次会话的多次请求的数据，存在服务器端
+                session用以存储任意类型，任意大小的数据
+
+                session和cookie的区别：
+                    session存储数据在服务器端，cookie在客户端
+                    session没有数据大小限制，cookie有
+                    session数据安全，cookie相对较弱
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
