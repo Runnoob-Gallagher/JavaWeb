@@ -51,8 +51,24 @@ Cookie:客户端会话技术，将数据保存到客户端
             没有：第一次访问
                 响应数据：您好，欢迎您首次访问
                 写回Cookie：lastTime=xxxx
+
 JSP:Java Server Pages java服务器页面
+    即可以写html也可以写java代码
+    原理：    jsp本质是一个servlet
+        服务器解析请求消息，找到是否有index.jsp资源
+        如果找到了，会将index.jsp转换为.java文件
+        编译.java文件，生成.class文件
 
-
+        JSP脚本：定义java代码的方式
+            <% code %> 定义的java代码，在service方法中。service方法中能定义什么这里面就能写什么
+            <%! code %> 定义的java代码，定义在jsp中转化后的成员变量
+            <%= code %> 定义的java代码，会输出到页面上，输出语句中可以定义什么，这你也就可以定义什么
+        JSP内置对象：在jsp中不需要获取和创建，就可以直接拿来使用的对象
+            一共有九个内置对象：
+                request：
+                response：
+                out：将数据输出到页面上和reponse.getwriter()类似
+                    区别: reponse.getwriter()的输出不论定义的位置如何，都会先于out输出
+                            因为先是找reponse的缓冲区
 
 Session：服务端会话技术，再一次会话的多次请求间共享数据，将数据保存在服务端的对象中。HttpSession
