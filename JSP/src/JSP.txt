@@ -1,0 +1,82 @@
+JSP:
+    1.指令
+        *作用：用于配置JSP页面，导入资源文件
+        *格式：
+        <%@ page contentType="text/html;charset=UTF-8" errorPage="xxx.jsp" language="java" %>
+            <%@ 指令名称 属性名1=属性值1 属性名2=属性值2 ... %>
+        *分类：
+            1.page      ：配置JSP页面的
+                *contentType:等同于response.setContype()
+                    1.设置响应体的mime类型以及字符集
+                    2.设置当前jsp页面的编码(只能是高级的IDE才能生效，如果使用低级工具，就需要设置pageEncoding属性设置当前页面字符集)
+                *import：导包
+                *errorPage：当前页面发生异常后，会自动跳转到指定的错误页面
+                *idErrorPage：表示当前也是是否是错误页面
+                    *true：是，可以使用内置对象exception
+                    *false：否。默认值。不可以使用内置对象exception
+            2.include：页面包含的/导入页面的资源文件
+                * <%@include file="top.jsp"%>    //这样就将top.jsp中的资源导入到该资源下
+            3.taglib：导入资源
+                * <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+                    *prefix：前缀，自定义的
+
+    2.MVC
+        *M:Model，模型。 JavaBean
+            *完成具体的业务操作，如：查询数据库，封装对象
+        *V:View，视图。JSP
+            *展示数据
+        *C:Controller，控制器。Sevlet
+            *获取用户的输入
+            *调用模型
+            *将数据交给试图进行展示
+
+    3.EL表达式
+        1.作用：简化和替换jsp页面中java代码的编写
+        2.语法：${表达式}
+        3.JSP默认支持EL表达式
+            如何原样输出EL表达式：
+                1.设置JSP中page指定配置： isELIgnored = "true"
+                2.加上反斜线
+
+        4.运算符：
+            1.算术运算符：+ - * /(div) %(mod)
+            2.比较
+            3.逻辑
+            4.空运算符 Empty
+                判断字符串、集合、数组的长度是否为0或者对象是否为null
+
+        5.获取值：
+            1.EL表达式只能从域对象中获取值
+            2.语法：
+                1.${域名称.键名}：从指定域中回去指定键的值
+                    *域名称：
+                        1.pageScope         ---> pageContext
+                        2.requestScope      ---> request
+                        3.sessionScope      ---> session
+                        4.applicationScope  ---> application(ServletContext)
+                    *例如：在request狱中存储了name=gallagher
+                    *获取：${requestScore.name}
+                2.${键名}：表示依次从最小的域中查找是否有改建对应的值，知道找到为止
+        6.获取对象：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
