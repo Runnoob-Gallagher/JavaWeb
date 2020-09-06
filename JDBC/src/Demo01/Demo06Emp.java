@@ -57,4 +57,7 @@ public class Demo06Emp {
                 ", dep_location='" + dep_location + '\'' +
                 '}';
     }
+
+    public Demo06Emp() {
+    }
 }
