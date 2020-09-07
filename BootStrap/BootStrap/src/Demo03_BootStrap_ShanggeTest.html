@@ -1,10 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>栅格测试</title>
-</head>
-<body>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--initial-scale 表示缩放比例-->
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
 
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="../js/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .inner{
+            border: 1px red solid;
+        }
+        .boot{
+            border: 1px black solid;
+        }
+        .sm{
+            border: 1px yellow solid;
+        }
+        .cs{
+            border: 1px burlywood solid;
+        }
+    </style>
+</head>
+    这个demo3的理解：
+        1.一行不管怎么说都是12格
+        2.不管你的属性定义是lg、xs还是怎么，加起来为12就占满一行
+        3.lg、xs的区别是当从大屏变为小屏时，他会换行。换行的先后顺序是lg>md>sm>xs
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 inner">格子</div>
+        <div class="col-lg-4 inner">格子</div>
+        <div class="col-lg-4 inner">格子</div>
+        <div class="col-lg-1 inner">格子</div>
+        <div class="col-lg-1 inner">格子</div>
+        <div class="col-lg-1 inner">格子</div>
+        <div class="col-lg-1 inner">格子</div>
+        <div class="col-lg-1 inner">格子</div>
+        <div class="col-lg-1 inner">格子</div>
+        <div class="col-lg-1 inner">格子</div>
+        <div class="col-lg-1 inner">格子</div>
+        <div class="col-lg-1 inner">格子</div>
+    </div>
+    <row>
+        <div class="col-md-4 boot">中等</div>
+        <div class="col-md-4 boot">中等</div>
+        <div class="col-md-4 boot">中等</div>
+        <div class="col-md-1 boot">中等</div>
+        <div class="col-md-1 boot">中等</div>
+        <div class="col-md-1 boot">中等</div>
+        <div class="col-md-1 boot">中等</div>
+        <div class="col-md-1 boot">中等</div>
+        <div class="col-md-1 boot">中等</div>
+        <div class="col-md-1 boot">中等</div>
+        <div class="col-md-1 boot">中等</div>
+        <div class="col-md-1 boot">中等</div>
+    </row>
+    <row>
+        <div class="col-xs-2 sm">小号</div>
+        <div class="col-xs-2 sm">小号</div>
+        <div class="col-xs-2 sm">小号</div>
+        <div class="col-xs-1 sm">小号</div>
+        <div class="col-xs-1 sm">小号</div>
+        <div class="col-xs-1 sm">小号</div>
+        <div class="col-xs-1 sm">小号</div>
+        <div class="col-xs-1 sm">小号</div>
+        <div class="col-xs-1 sm">小号</div>
+        <div class="col-xs-1 sm">小号</div>
+        <div class="col-xs-1 sm">小号</div>
+
+    </row>
+    <row>
+        <div class="col-xs-4 xs">小格子</div>
+        <div class="col-xs-4 xs">小格子</div>
+        <div class="col-xs-4 xs">小格子</div>
+    </row>
+</div>
 </body>
 </html>
