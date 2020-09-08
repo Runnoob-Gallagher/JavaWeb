@@ -20,26 +20,33 @@
         管理员登录
     </h3>
     <div class="container" style="width: 400px">
+        <form action="login" method="post">
         <div class="form-group">
-            <label for="name">用户名</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="请输入姓名">
+            <label for="name">用户名：</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="请输入用户名">
         </div>
         <div class="form-group">
-            <label for="password">密码</label>
-            <input type="text" class="form-control" id="password" name="name" placeholder="请输入姓名">
+            <label for="password">密码：</label>
+            <input type="text" class="form-control" id="password" name="name" placeholder="请输入密码">
         </div>
-        <form class="form-inline">
+        <div class="form-inline">
             <div class="form-group">
-                <label for="checkcode">验证码</label>
+                <label for="changecode">验证码：</label>
                 <input type="text" class="form-control" id="checkcode" placeholder="验证码输入" style="width: 150px">
-
+                <a href="javascript:refreshCode()"><img src="checkcode" title="看不清点击刷新" id="changecode"/></a>
             </div>
-        </form>
+        </div>
         <hr>
         <div style="text-align: center" class="login">
             <button type="button" class="btn btn-primary">登录</button>
         </div>
-
+            </form>
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" >
+                <span>&times;</span></button>
+            <strong>登录失败!</strong>
+        </div>
     </div>
+
 </body>
 </html>

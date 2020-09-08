@@ -34,6 +34,10 @@
                 radio类型表示小圆点
                 <label for="exampleInputName">姓名</label>
                 <input type="email" class="form-control" id="exampleInputName" placeholder="请输入姓名">
+        注意点1：form表单里的action=""表示什么：
+            必需的 action 属性规定当提交表单时，向何处发送表单数据。
+            绝对 URL - 指向其他站点（比如 src="www.example.com/example.htm"）
+            相对 URL - 指向站点内的文件（比如 src="example.htm"）
 
     5.自己写update_a.html
         注意点1：class=form_group作用：看源码
@@ -46,3 +50,7 @@
             *具有4px的圆角
             *设置阴影效果，并且元素得到焦点之时，阴影和边框效果会有所变化
             *设置了placeholder的颜色为#999
+    6.自己写login_a.html
+        注意点1：注意页面是表单的话，就要写对应的<form>标签
+        注意点2：title="看不清点击刷新"
+        注意点3：href="javascript:refreshCode()"Mysql
