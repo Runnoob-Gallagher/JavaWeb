@@ -1,5 +1,5 @@
 一、首页：
-    1.疑问一：
+    1.疑问一
         自动打开的页面是index.jsp还是index.html
     解答： 如果 IDEA 中的 web.xml 没有相关的配置信息，就运行 Tomcat 安装目录下的 conf\web.xml。按照先后顺序执行，比如把index.html删除就会执行index.jsp
             <welcome-file-list>
