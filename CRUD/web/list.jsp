@@ -21,8 +21,29 @@
 <body>
 <header class="container">
     <h3 style="text-align: center">社保管理子系统版本查询</h3>
+    <form class="form-inline" style="float: left;margin-top: 10px;margin-bottom: 5px" >
+        <div class="form-group">
+            <label for="InputName">姓名</label>
+            <input type="text" class="form-control" id="InputName">
+        </div>
+        <div class="form-group">
+        <label for="InputAddr">籍贯</label>
+        <input type="text" class="form-control" id="InputAddr">
+        </div>
+        <div class="form-group">
+            <label for="InputEmail">邮箱</label>
+            <input type="email" class="form-control" id="InputEmail">
+        </div>
+        <button type="submit" class="btn btn-default">查询</button>
+    </form>
+    <div style="float: right; margin-top: 10px;margin-bottom: 5px" >
+        <a class="btn btn-primary" href="add.html">添加联系人</a>
+        <a class="btn btn-primary" href="add.html">删除选中</a>
+        <!--<button type="button" class="btn btn-primary">添加联系人</button>-->
+    </div>
     <table class="table table-bordered table-hover">
         <tr class="success">
+            <th><input type="checkbox"></th>
             <th>编号</th>
             <th>姓名</th>
             <th>性别</th>
@@ -35,6 +56,7 @@
         <c:forEach items="${usermessage}" var="user" varStatus="num">
             <%--varStatus:表示循环状态对象  ，类比迭代器--%>
             <tr>
+                <th><input type="checkbox"></th>
                 <td>${num.count}</td>
                 <td>${user.XM}</td>
                 <td>${user.gender}</td>
@@ -49,10 +71,29 @@
         </c:forEach>
 
     </table>
-    <div style="text-align: center">
-        <a class="btn btn-primary" style="text-align: center" href="add.html">添加联系人</a>
-        <!--<button type="button" class="btn btn-primary">添加联系人</button>-->
-    </div>
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <span style="margin-left: 5px;font-size: 25px">
+               共20条记录，共4页
+            </span>
+
+        </ul>
+    </nav>
 
 </header>
 </body>

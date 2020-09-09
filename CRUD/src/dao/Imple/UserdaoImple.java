@@ -1,9 +1,7 @@
 package dao.Imple;
 
-import com.alibaba.druid.support.json.JSONUtils;
 import dao.Userdao;
 import domain.Table_user;
-import org.junit.Test;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import util.JdbcUtils;

@@ -1,11 +1,8 @@
 package util;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
-import org.junit.Test;
 
 import javax.sql.DataSource;
-import javax.xml.crypto.Data;
-import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
