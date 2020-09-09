@@ -2,7 +2,7 @@ package domain;
 
 public class Table_user {
     private int id;
-    private String NAme;
+    private String XM;
     private String gender;
     private int age;
     private String address;
@@ -17,12 +17,12 @@ public class Table_user {
         this.id = id;
     }
 
-    public String getNAme() {
-        return NAme;
+    public String getXM() {
+        return XM;
     }
 
-    public void setNAme(String NAme) {
-        this.NAme = NAme;
+    public void setXM(String XM) {
+        this.XM = XM;
     }
 
     public String getGender() {
@@ -69,7 +69,7 @@ public class Table_user {
     public String toString() {
         return "Table_user{" +
                 "id=" + id +
-                ", NAme='" + NAme + '\'' +
+                ", XM='" + XM + '\'' +
                 ", gender='" + gender + '\'' +
                 ", age=" + age +
                 ", address='" + address + '\'' +
