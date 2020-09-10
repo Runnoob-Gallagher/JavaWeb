@@ -1,8 +1,7 @@
 package web;
 
 import domain.Table_user;
-import service.Imple.UserServiceImple;
-import service.UserService;
+import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
+import java.lang.reflect.InvocationTargetException;
+import java.util.Map;
 
 @WebServlet("/loginServlet")
 public class loginServlet extends HttpServlet {
@@ -19,7 +19,19 @@ public class loginServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
 
         //获取数据
+            //这个是获取的验证码
+        String verifycode = request.getParameter("verifycode");
+            //这个使获取的所有数据
+        Map<String, String[]> parameterMap = request.getParameterMap();
         //封装对象
+        Table_user table_user = new Table_user();
+        try {
+            BeanUtils.populate(table_user,parameterMap);
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
         //验证码校验
         //调用Service服务
         //判断是否登陆成功
