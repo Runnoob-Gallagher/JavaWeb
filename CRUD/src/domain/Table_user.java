@@ -8,6 +8,8 @@ public class Table_user {
     private String address;
     private String qq;
     private String email;
+    private String name;
+    private String password;
 
     public int getId() {
         return id;
@@ -65,6 +67,22 @@ public class Table_user {
         this.email = email;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "Table_user{" +
@@ -75,6 +93,10 @@ public class Table_user {
                 ", address='" + address + '\'' +
                 ", qq='" + qq + '\'' +
                 ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }
+
+
