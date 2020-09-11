@@ -21,4 +21,12 @@ public class UserdaoImple implements Userdao {
         List<Table_user> table_user_list = template.query(sql, new BeanPropertyRowMapper<Table_user>(Table_user.class));
         return table_user_list;
     }
+
+    @Override
+    public Table_user getuserpass(String username, String password) {
+        String sql = "select *from Table_user where username=? and password=?";
+        Table_user table_user = template.queryForObject(sql, new BeanPropertyRowMapper<Table_user>((Table_user.class), username, password));
+    }
+
+
 }

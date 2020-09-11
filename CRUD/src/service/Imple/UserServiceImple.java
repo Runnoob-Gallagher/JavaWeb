@@ -18,4 +18,10 @@ public class UserServiceImple implements UserService {
     public List<Table_user> findAll() {
         return dao.findAll(); //这里的返回值是要返回到Servlet里去的，所以还需要在Servlet中，创建该类的对象，调用方法获取值
     }
+
+    @Override
+    public Table_user getuserpassword(String username, String password) {
+        //创建对象调用方法,使用的是多态。
+        return dao.getuserpass(username,password);
+    }
 }
