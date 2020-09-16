@@ -24,4 +24,8 @@ public interface Userdao {
 
 
     void updateUser(Table_user table_user);
+
+    int findtotalCount();
+
+    List<Table_user> FindByPage(int start, int rows);
 }

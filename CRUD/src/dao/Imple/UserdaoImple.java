@@ -1,6 +1,5 @@
 package dao.Imple;
 
-import com.sun.org.apache.xalan.internal.xsltc.compiler.Template;
 import dao.Userdao;
 import domain.Table_user;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -58,6 +57,18 @@ public class UserdaoImple implements Userdao {
     public void updateUser(Table_user table_user) {
         String sql = "update table_user set XM=?, gender=?, age=?, address=?, qq=?, email=? where id=?;";
         template.update(sql,table_user.getXM(),table_user.getGender(),table_user.getAge(),table_user.getAddress(),table_user.getQq(),table_user.getEmail(),table_user.getId());
+    }
+
+    @Override
+    public int findtotalCount() {
+        String sql = "select count(*) from table_user";
+        return template.queryForObject(sql,Integer.class);  //这个没太懂
+    }
+
+    @Override
+    public List<Table_user> FindByPage(int start, int rows) {
+        String sql = "select * from table_user limit ?,?";
+        return template.query(sql,new BeanPropertyRowMapper<Table_user>(Table_user.class),start,rows);
     }
 
 

@@ -1,5 +1,6 @@
 package service;
 
+import domain.PageBean;
 import domain.Table_user;
 
 import java.util.List;
@@ -28,4 +29,6 @@ public interface UserService {
     void updateTable_user(Table_user table_user);
 
     void delSelect(String[] uids);
+
+    PageBean<Table_user> getPageBean(String currentPage, String rows);
 }

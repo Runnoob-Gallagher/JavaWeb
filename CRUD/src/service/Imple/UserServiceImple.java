@@ -2,6 +2,7 @@ package service.Imple;
 
 import dao.Imple.UserdaoImple;
 import dao.Userdao;
+import domain.PageBean;
 import domain.Table_user;
 import service.UserService;
 
@@ -49,6 +50,29 @@ public class UserServiceImple implements UserService {
         for (String uid : uids) {
             dao.delUser(Integer.parseInt(uid));
         }
+    }
+
+    @Override
+    public PageBean<Table_user> getPageBean(String _currentPage, String _rows) {
+        int currentPage = Integer.parseInt(_currentPage);
+        int rows = Integer.parseInt(_rows);
+        //创建一个PageBean对象
+        PageBean<Table_user> pageBean = new PageBean<>();
+        //将传递过来的值用上
+        pageBean.setCurrentPage(currentPage);
+        pageBean.setRows(rows);
+        //调用dao查询总记录数
+        int totalCount = dao.findtotalCount();
+        pageBean.setTotalCount(totalCount);
+        //调用dao查询list集合
+        int start = (currentPage - 1) * rows;
+        List<Table_user> Table_user_list = dao.FindByPage(start,rows);//返回是一个List集合类型
+        pageBean.setList(Table_user_list);
+        //总页码
+        int totalPage = (totalCount % rows) == 0 ? (totalCount/rows) : (totalCount/rows) + 1;
+
+        return pageBean;
+
     }
 
 
