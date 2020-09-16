@@ -24,7 +24,7 @@
 <script type="text/javascript">
         function refreshCode() {
             //获取验证码对象
-            var elementById = document.getElementById("changecode");
+            var elementById = document.getElementById("vcode");
             //修改验证码图片src路径
             elementById.src = "${pageContext.request.contextPath}/checkCodeServlet?time=" + new Date().getTime();
         }
@@ -34,36 +34,38 @@
 <h3 style="text-align: center">
     管理员登录
 </h3>
-<div class="container" style="width: 400px">
-    <form action="${pageContext.request.contestPath}/loginServlet" method="post">
+<div class="container" style="width: 400px;">
+    <form action="${pageContext.request.contextPath}/loginServlet" method="post">
         <div class="form-group">
-            <label for="name">用户名：</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="请输入用户名">
+            <label for="user">用户名：</label>
+            <input type="text" name="username" class="form-control" id="user" placeholder="请输入用户名"/>
         </div>
+
         <div class="form-group">
             <label for="password">密码：</label>
-            <input type="text" class="form-control" id="password" name="name" placeholder="请输入密码">
+            <input type="password" name="password" class="form-control" id="password" placeholder="请输入密码"/>
         </div>
+
         <div class="form-inline">
-            <div class="form-group">
-                <label for="changecode">验证码：</label>
-                <input type="text" class="form-control" name="verifycode" id="checkcode" placeholder="验证码输入" style="width: 150px">
-                <a href="javascript:refreshCode();">
-                    <img src="${pageContext.request.contextPath}/checkCodeServlet" title="看不清点击刷新" id="changecode"/>
-                </a>
-            </div>
+            <label for="vcode">验证码：</label>
+            <input type="text" name="verifycode" class="form-control" id="checkcode" placeholder="请输入验证码" style="width: 120px;"/>
+            <a href="javascript:refreshCode();">
+                <img src="${pageContext.request.contextPath}/checkCodeServlet" title="看不清点击刷新" id="vcode"/>
+            </a>
         </div>
-        <hr>
-        <div style="text-align: center" class="login">
-            <button type="button" class="btn btn-primary">登录</button>
+        <hr/>
+        <div class="form-group" style="text-align: center;">
+            <input class="btn btn btn-primary" type="submit" value="登录">
         </div>
     </form>
+
+    <!-- 出错显示的信息框 -->
     <div class="alert alert-warning alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" >
-            <span>&times;</span></button>
-        <strong>登录失败!</strong>
+            <span>&times;</span>
+        </button>
+        <strong>${log_msg}</strong>
     </div>
 </div>
-
 </body>
 </html>

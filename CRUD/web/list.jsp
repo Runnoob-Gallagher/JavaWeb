@@ -17,6 +17,30 @@
     <script src="js/jquery-2.1.0.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        function delUser(id) {
+            //用户安全提示
+            if(confirm("确定删除所选？")){
+                //定义访问路径
+                location.href="${pageContext.request.contextPath}/delUserServlet?id="+id;
+            }
+        }
+        window.onload = function () {
+            // 给删除选中绑定单击事件,用于提交表单
+            document.getElementById("delselected").onclick = function () {
+                //submit就是提交表单的
+                document.getElementById("form").submit();
+            }
+        }
+            document.getElementById("allselected").onclick = function () {
+            //获取下边列表中所有的checkbox
+            var checkid = document.getElementsByName("uid");
+            //遍历
+            for (var i = 0; i <checkid.length ; i++) {
+                checkid[i].checked = this.checked;
+            }
+        }
+    </script>
 </head>
 <body>
 <header class="container">
@@ -37,13 +61,14 @@
         <button type="submit" class="btn btn-default">查询</button>
     </form>
     <div style="float: right; margin-top: 10px;margin-bottom: 5px" >
-        <a class="btn btn-primary" href="add.html">添加联系人</a>
-        <a class="btn btn-primary" href="add.html">删除选中</a>
+        <a class="btn btn-primary" href="add.jsp">添加联系人</a>
+        <a class="btn btn-primary" href="javascript:void(0);" id="delselected">删除选中</a>
         <!--<button type="button" class="btn btn-primary">添加联系人</button>-->
     </div>
+    <form id="form" action="${pageContext.request.contextPath}/delSelectServlet" method="post">
     <table class="table table-bordered table-hover">
         <tr class="success">
-            <th><input type="checkbox"></th>
+            <th><input type="checkbox" id="allselected"></th>
             <th>编号</th>
             <th>姓名</th>
             <th>性别</th>
@@ -56,7 +81,7 @@
         <c:forEach items="${usermessage}" var="user" varStatus="num">
             <%--varStatus:表示循环状态对象  ，类比迭代器--%>
             <tr>
-                <th><input type="checkbox"></th>
+                <td><input type="checkbox" name="uid" value="${user.id}"></td>
                 <td>${num.count}</td>
                 <td>${user.XM}</td>
                 <td>${user.gender}</td>
@@ -65,12 +90,15 @@
                 <td>${user.qq}</td>
                 <td>${user.email}</td>
                 <td>
-                    <a class="btn btn-default btn-sm" href="update.html">修改</a><a class="btn btn-default btn-sm" href="">删除</a>
+                    <a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/findUserServlet?id=${user.id}">修改</a>
+                    <%--<a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/delUserServlet?id=${user.id}">删除</a>--%>
+                    <a class="btn btn-default btn-sm" href="javascript:delUser(${user.id});" >删除</a>
                 </td>
             </tr>
         </c:forEach>
 
     </table>
+    </form>
     <nav aria-label="Page navigation">
         <ul class="pagination">
             <li>

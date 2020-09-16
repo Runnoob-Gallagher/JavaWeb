@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -11,7 +12,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <script src="../js/jquery-2.1.0.min.js"></script>
+    <script src="js/jquery-2.1.0.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
 
 </head>
@@ -25,7 +26,7 @@
         <form action="${pageContext.request.contextPath}/addUserServlet" method="post">
             <div class="form-group">
                 <label for="exampleInputName">姓名</label>
-                <input type="email" class="form-control" id="exampleInputName" name="name" placeholder="请输入姓名">
+                <input type="text" class="form-control" id="exampleInputName" name="XM" placeholder="请输入姓名">
             </div>
             <div class="form-group">
                 <label>性别</label>
@@ -46,11 +47,11 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputQQ">QQ</label>
-                <input type="text" class="form-control" id="exampleInputQQ" placeholder="请输入QQ号">
+                <input type="text" class="form-control" id="exampleInputQQ" name="qq" placeholder="请输入QQ号">
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail">Email</label>
-                <input type="text" class="form-control" id="exampleInputEmail" placeholder="请输入邮箱">
+                <input type="text" class="form-control" id="exampleInputEmail" name="email" placeholder="请输入邮箱">
             </div>
             <div style="text-align: center">
                 <button type="submit" class="btn btn-primary">提交</button>
