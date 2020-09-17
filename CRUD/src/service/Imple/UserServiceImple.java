@@ -7,6 +7,7 @@ import domain.Table_user;
 import service.UserService;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 用以实现UserService接口中的findAll()方法
@@ -53,7 +54,7 @@ public class UserServiceImple implements UserService {
     }
 
     @Override
-    public PageBean<Table_user> getPageBean(String _currentPage, String _rows) {
+    public PageBean<Table_user> getPageBean(String _currentPage, String _rows, Map<String, String[]> condition) {
         int currentPage = Integer.parseInt(_currentPage);
         if(currentPage <= 0){
             currentPage = 1;
@@ -65,16 +66,17 @@ public class UserServiceImple implements UserService {
         //pageBean.setCurrentPage(currentPage);  这个我放后面去了
         pageBean.setRows(rows);
         //调用dao查询总记录数
-        int totalCount = dao.findtotalCount();
+        int totalCount = dao.findtotalCount(condition);
         pageBean.setTotalCount(totalCount);
         //调用dao查询list集合
         int start = (currentPage - 1) * rows;
-        List<Table_user> Table_user_list = dao.FindByPage(start,rows);//返回是一个List集合类型
+        //因为是条件查询也需要加上参数condition
+        List<Table_user> Table_user_list = dao.FindByPage(start,rows,condition);//返回是一个List集合类型
         pageBean.setList(Table_user_list);
-        System.out.println(Table_user_list);
+//        System.out.println(Table_user_list);
         //总页码
         int totalPage = (totalCount % rows) == 0 ? (totalCount/rows) : (totalCount/rows) + 1;
-        System.out.println(totalPage + "yyyyyy");
+//        System.out.println(totalPage + "yyyyyy");
         if(currentPage >= totalPage){
             currentPage = totalPage;
         }

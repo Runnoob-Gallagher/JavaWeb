@@ -48,18 +48,18 @@
 <body>
 <header class="container">
     <h3 style="text-align: center">社保管理子系统版本查询</h3>
-    <form class="form-inline" style="float: left;margin-top: 10px;margin-bottom: 5px" >
+    <form class="form-inline" action="${pageContext.request.contextPath}/findUserByPageServlet" method="post" style="float: left;margin-top: 10px;margin-bottom: 5px" >
         <div class="form-group">
             <label for="InputName">姓名</label>
-            <input type="text" class="form-control" id="InputName">
+            <input type="text" name="XM" class="form-control" id="InputName">
         </div>
         <div class="form-group">
         <label for="InputAddr">籍贯</label>
-        <input type="text" class="form-control" id="InputAddr">
+        <input type="text" name="address" class="form-control" id="InputAddr">
         </div>
         <div class="form-group">
             <label for="InputEmail">邮箱</label>
-            <input type="email" class="form-control" id="InputEmail">
+            <input type="email" name="emails" class="form-control" id="InputEmail">
         </div>
         <button type="submit" class="btn btn-default">查询</button>
     </form>

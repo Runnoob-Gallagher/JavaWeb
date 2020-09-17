@@ -6,7 +6,10 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import util.JdbcUtils;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * 实现Userdao方法，获取数据库中的数据
@@ -60,15 +63,52 @@ public class UserdaoImple implements Userdao {
     }
 
     @Override
-    public int findtotalCount() {
-        String sql = "select count(*) from table_user";
-        return template.queryForObject(sql,Integer.class);  //这个没太懂
+    public int findtotalCount(Map<String, String[]> condition) {
+        //定义模板SQL
+        String sql = "select count(*) from table_user where 1=1 ";
+        //定义一个StringBuilder来拼接sql
+        StringBuilder stringBuilder = new StringBuilder(sql);
+        //遍历map
+        Set<String> keySet = condition.keySet();  //获取所有的key,指name email 等等
+        //定义一个参数的集合，就是用来存储name emails等的指
+        List<Object> list = new ArrayList<>();
+        //通过key遍历value
+        for (String values : keySet) {
+            String value = condition.get(values)[0];//因为条件框中只会存在一个条件
+            //判断value是否为空，不为空的话就追加 查询条件
+            if(!"".equals(value) && value != null){
+                stringBuilder.append(" and "+ values +" like ? ");
+                list.add("'%" + value + "%'"); //这个就代表了？的值
+            }
+        }
+        System.out.println(stringBuilder + "  " +"sql");
+        System.out.println(list + "  " +"list");
+        return template.queryForObject(stringBuilder.toString(),Integer.class,list.toArray());  //这个没太懂,后面接可变参数
     }
 
     @Override
-    public List<Table_user> FindByPage(int start, int rows) {
-        String sql = "select * from table_user limit ?,?";
-        return template.query(sql,new BeanPropertyRowMapper<Table_user>(Table_user.class),start,rows);
+    public List<Table_user> FindByPage(int start, int rows, Map<String, String[]> condition) {
+        String sql = "select * from table_user where 1 = 1 ";
+        //定义一个StringBuilder来拼接sql
+        StringBuilder stringBuilder = new StringBuilder(sql);
+        //遍历map
+        Set<String> keySet = condition.keySet();  //获取所有的key,指name email 等等
+        //定义一个参数的集合，就是用来存储name emails等的指
+        List<Object> list = new ArrayList<>();
+        //通过key遍历value
+        for (String values : keySet) {
+            String value = condition.get(values)[0];//因为条件框中只会存在一个条件
+            //判断value是否为空，不为空的话就追加 查询条件
+            if(!"".equals(value) && value != null){
+                stringBuilder.append(" and "+ values +" like ? ");
+                list.add("'%" + value + "%'"); //这个就代表了？的值
+            }
+        }
+        //因为是分页查询，还要加条件
+        stringBuilder.append(" limit ? , ?");
+        list.add(start);
+        list.add(rows);
+        return template.query(stringBuilder.toString(),new BeanPropertyRowMapper<Table_user>(Table_user.class),list.toArray());
     }
 
 

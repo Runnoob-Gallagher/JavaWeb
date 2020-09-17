@@ -3,6 +3,7 @@ package dao;
 import domain.Table_user;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 用户操作的dao
@@ -25,7 +26,7 @@ public interface Userdao {
 
     void updateUser(Table_user table_user);
 
-    int findtotalCount();
+    int findtotalCount(Map<String, String[]> condition);
 
-    List<Table_user> FindByPage(int start, int rows);
+    List<Table_user> FindByPage(int start, int rows, Map<String, String[]> condition);
 }

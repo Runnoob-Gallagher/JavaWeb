@@ -4,6 +4,7 @@ import domain.PageBean;
 import domain.Table_user;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 用户管理的业务接口
@@ -30,5 +31,5 @@ public interface UserService {
 
     void delSelect(String[] uids);
 
-    PageBean<Table_user> getPageBean(String currentPage, String rows);
+    PageBean<Table_user> getPageBean(String currentPage, String rows, Map<String, String[]> condition);
 }
