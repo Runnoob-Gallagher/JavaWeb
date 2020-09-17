@@ -27,9 +27,12 @@
         }
         window.onload = function () {
             // 给删除选中绑定单击事件,用于提交表单
-            document.getElementById("delselected").onclick = function () {
-                //submit就是提交表单的
-                document.getElementById("form").submit();
+
+                document.getElementById("delselected").onclick = function () {
+                    if(confirm("确定删除所选？？")){
+                    //submit就是提交表单的
+                    document.getElementById("form").submit();
+                }
             }
         }
             document.getElementById("allselected").onclick = function () {
@@ -78,7 +81,7 @@
             <th>邮箱</th>
             <th>操作</th>
         </tr>
-        <c:forEach items="${usermessage}" var="user" varStatus="num">
+        <c:forEach items="${pageBean_list.list}" var="user" varStatus="num">
             <%--varStatus:表示循环状态对象  ，类比迭代器--%>
             <tr>
                 <td><input type="checkbox" name="uid" value="${user.id}"></td>
@@ -101,23 +104,44 @@
     </form>
     <nav aria-label="Page navigation">
         <ul class="pagination">
-            <li>
-                <a href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-                <a href="#" aria-label="Next">
+            <c:if test="${pageBean_list.currentPage == 1}">
+                <li class="disabled">
+            </c:if>
+            <c:if test="${pageBean_list.currentPage !=1 }">
+                <li>
+                </c:if>
+                    <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${pageBean_list.currentPage-1}&rows=6" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+
+
+            <c:forEach begin="1" end="${pageBean_list.totalPage}" var="num">  <%--var的意思是代表每一个的变量--%>
+            <c:if test="${pageBean_list.currentPage == num}">
+                <li class="active"><a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${num}&rows=6">${num}</a></li>
+            </c:if>
+            <c:if test="${pageBean_list.currentPage != num}">
+                <li ><a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${num}&rows=6">${num}</a></li>
+            </c:if>
+            </c:forEach>
+                <c:if test="${pageBean_list.currentPage == pageBean_list.totalPage}">
+                    <li class="disabled">
+                        <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${pageBean_list.currentPage}&rows=6" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </c:if>
+                <c:if test="${pageBean_list.currentPage != pageBean_list.totalPage}">
+                    <li>
+                <a href="${pageContext.request.contextPath}/findUserByPageServlet?currentPage=${pageBean_list.currentPage + 1}&rows=6" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
+                    </li>
+                    </c:if>
+
             </li>
             <span style="margin-left: 5px;font-size: 25px">
-               共20条记录，共4页
+               共${pageBean_list.totalCount}条记录，共${pageBean_list.totalPage}页
             </span>
 
         </ul>

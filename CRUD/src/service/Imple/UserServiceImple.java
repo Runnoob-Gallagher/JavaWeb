@@ -55,11 +55,14 @@ public class UserServiceImple implements UserService {
     @Override
     public PageBean<Table_user> getPageBean(String _currentPage, String _rows) {
         int currentPage = Integer.parseInt(_currentPage);
+        if(currentPage <= 0){
+            currentPage = 1;
+        }
         int rows = Integer.parseInt(_rows);
         //创建一个PageBean对象
         PageBean<Table_user> pageBean = new PageBean<>();
         //将传递过来的值用上
-        pageBean.setCurrentPage(currentPage);
+        //pageBean.setCurrentPage(currentPage);  这个我放后面去了
         pageBean.setRows(rows);
         //调用dao查询总记录数
         int totalCount = dao.findtotalCount();
@@ -68,9 +71,15 @@ public class UserServiceImple implements UserService {
         int start = (currentPage - 1) * rows;
         List<Table_user> Table_user_list = dao.FindByPage(start,rows);//返回是一个List集合类型
         pageBean.setList(Table_user_list);
+        System.out.println(Table_user_list);
         //总页码
         int totalPage = (totalCount % rows) == 0 ? (totalCount/rows) : (totalCount/rows) + 1;
-
+        System.out.println(totalPage + "yyyyyy");
+        if(currentPage >= totalPage){
+            currentPage = totalPage;
+        }
+        pageBean.setCurrentPage(currentPage);
+        pageBean.setTotalPage(totalPage);
         return pageBean;
 
     }
