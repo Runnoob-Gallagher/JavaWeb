@@ -32,7 +32,7 @@ public class FindUserByPageServlet extends HttpServlet {
         }
         //获取条件查询的参数
         Map<String, String[]> condition = request.getParameterMap();
-
+        System.out.println(condition + " ");
 
 //        System.out.println(currentPage+"  " + rows);
         //调用Service查询PageBean
@@ -40,7 +40,7 @@ public class FindUserByPageServlet extends HttpServlet {
         //现在因为多了一个条件查询要加condition,方法需重构
         PageBean<Table_user> pb = userService.getPageBean(currentPage,rows,condition);//因为你根据这个查询能获得一个页面，页面内容展示为Table_user的内容
         //将PageBean存入到request中
-//        System.out.println(pb);
+        System.out.println(pb);
         request.setAttribute("pageBean_list",pb);
         //转发到list.jsp中
         request.getRequestDispatcher("/list.jsp").forward(request,response);

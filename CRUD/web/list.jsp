@@ -59,7 +59,7 @@
         </div>
         <div class="form-group">
             <label for="InputEmail">邮箱</label>
-            <input type="email" name="emails" class="form-control" id="InputEmail">
+            <input type="email" name="email" class="form-control" id="InputEmail">
         </div>
         <button type="submit" class="btn btn-default">查询</button>
     </form>

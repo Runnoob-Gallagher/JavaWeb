@@ -74,6 +74,10 @@ public class UserdaoImple implements Userdao {
         List<Object> list = new ArrayList<>();
         //通过key遍历value
         for (String values : keySet) {
+            //排除分页条件参数
+            if("currentPage".equals(values) || "rows".equals(values)){
+                continue;
+            }
             String value = condition.get(values)[0];//因为条件框中只会存在一个条件
             //判断value是否为空，不为空的话就追加 查询条件
             if(!"".equals(value) && value != null){
@@ -94,7 +98,7 @@ public class UserdaoImple implements Userdao {
         //遍历map
         Set<String> keySet = condition.keySet();  //获取所有的key,指name email 等等
         //定义一个参数的集合，就是用来存储name emails等的指
-        List<Object> list = new ArrayList<>();
+        List<Object> list = new ArrayList<Object>();
         //通过key遍历value
         for (String values : keySet) {
             String value = condition.get(values)[0];//因为条件框中只会存在一个条件
@@ -108,8 +112,8 @@ public class UserdaoImple implements Userdao {
         stringBuilder.append(" limit ? , ?");
         list.add(start);
         list.add(rows);
+        System.out.println(list.toArray() + "asdasd");
+        System.out.println(stringBuilder.toString() + "asdaddddddd");
         return template.query(stringBuilder.toString(),new BeanPropertyRowMapper<Table_user>(Table_user.class),list.toArray());
     }
-
-
 }
